@@ -1,0 +1,41 @@
+.content-container {
+    max-width: 850px;       /* Keeps text readable (not too wide) */
+    margin: 0 auto;         /* Centers the container */
+    padding: 100px 5%;      /* Generous top/bottom spacing */
+}
+
+.content-container p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.15rem;     /* Comfortable reading size */
+    line-height: 1.8;       /* Increased breathing room between lines */
+    color: var(--text-dim); /* Use the #a1a1a1 grey from your variables */
+    margin-bottom: 2.5rem;  /* Space between paragraphs */
+    font-weight: 300;       /* Light weight for a premium feel */
+    text-align: justify;    /* Optional: creates clean edges like a book */
+}
+
+/* Make the first paragraph stand out slightly (Optional) */
+.content-container p:first-of-type {
+    color: var(--text-main); /* Brighter white for the intro */
+    font-size: 1.25rem;
+}
+
+/* Hover effect to make the text feel alive */
+.content-container p:hover {
+    color: #ffffff;
+    transition: color 0.4s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-container {
+        padding: 60px 20px;
+    }
+    
+    .content-container p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        text-align: left; /* Better for mobile readability */
+    }
+}
