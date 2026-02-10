@@ -1,0 +1,588 @@
+/* ============================================================
+   VARIABLES & GLOBAL
+   ============================================================ */
+:root {
+  --teal-color: #008fa1;
+  --accent-orange: #FF4D00;
+  --bg-color: #050505;
+  --text-main: #ffffff;
+  --text-dim: #a1a1a1;
+  --font-main: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.dark-theme {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+}
+
+.logo-link {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;        /* Keeps the text color white/black as designed */
+    display: flex;         /* Keeps the icon and text side-by-side */
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Optional: add a very slight fade effect when hovering over the logo */
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+/* ============================================================
+   SCROLL ANIMATION (Fade Up Easy-Out)
+   ============================================================ */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), 
+              transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   HERO SECTION (Architectural UI)
+   ============================================================ */
+.portfolio-projects {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.main-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes the video fill the area without stretching */
+    display: block;
+    pointer-events: none; /* Optional: prevents users from right-clicking/saving the video */
+}
+
+/* If this is for your hero section columns */
+.bg-column {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+   
+}
+.split-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  z-index: 1;
+}
+
+.bg-column {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s ease;
+}
+
+.dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
+  z-index: 2;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+}
+
+.top-label {
+  color: var(--teal-color);
+  font-size: 0.85rem;
+  letter-spacing: 5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.diamond-teal {
+  width: 8px; height: 8px;
+  background: var(--teal-color);
+  transform: rotate(45deg);
+}
+
+.projects-title {
+  font-size: clamp(3rem, 12vw, 9rem);
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -3px;
+  line-height: 1;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin: 25px auto 40px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* --- Architectural Button --- */
+
+
+.button-frame {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+}
+
+.button-frame::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  border-radius: inherit;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  animation: borderPulse 2s ease-in-out infinite;
+}
+
+
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(35, 35, 35, 0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 16px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+}
+
+.diamond-white {
+  width: 10px; height: 10px;
+  background: #008fa1;
+  transform: rotate(45deg);
+}
+
+.button-frame:hover::after {
+  transform: scale(0.94);
+  border-color: #fff;
+}
+
+/* ============================================================
+   PROJECT GRID
+   ============================================================ */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 5%;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 40px;
+}
+
+.project-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.image-box {
+  width: 100%;
+  aspect-ratio: 16 / 10; /* Fixed ratio for uniform look */
+  overflow: hidden;
+  background: #111;
+  border-radius: 4px;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card:hover img {
+  transform: scale(1.06);
+}
+
+.info { margin-top: 20px; }
+
+.category {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow {
+  color: var(--accent-orange);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .arrow {
+  transform: translate(5px, -5px);
+}
+
+/* ============================================================
+   LOAD MORE & FINAL CTA
+   ============================================================ */
+.footer-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  padding-bottom: 100px;
+}
+
+.load-more {
+  background: transparent;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.load-more:hover {
+  border-color: var(--accent-orange);
+  background: rgba(255, 77, 0, 0.1);
+  color: var(--accent-orange);
+  transform: translateY(-2px);
+}
+
+/* For the JS Load More function */
+.hidden-project {
+  display: none;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.show-project {
+  display: block !important;
+  animation: projectFadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes projectFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   COMING SOON MODAL STYLES
+   ============================================================ */
+.coming-soon-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.coming-soon-modal.active {
+  opacity: 1;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fef5f0 0%, #fff8f5 50%, #fef0e8 100%);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+/* Animated background blobs */
+.modal-overlay::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 149, 0, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+  animation: floatBlob1 8s ease-in-out infinite;
+  z-index: 2;
+}
+
+.modal-overlay::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 159, 161, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -50px;
+  left: 50px;
+  animation: floatBlob2 10s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes floatBlob1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -30px); }
+}
+
+@keyframes floatBlob2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-40px, 40px); }
+}
+
+.coming-soon-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* --- Visual Elements --- */
+
+/* The Orange Glow Sphere */
+.background-glow {
+  position: absolute;
+  top: 5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 77, 0, 0.4) 0%, rgba(255, 77, 0, 0) 70%);
+  filter: blur(80px);
+  z-index: 3;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* The thin white framing arc */
+.arc-line {
+  position: absolute;
+  top: 15%;
+  width: 800px;
+  height: 800px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  z-index: 4;
+  pointer-events: none;
+  animation: arcRotate 20s linear infinite;
+}
+
+@keyframes arcRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- Text Content --- */
+
+.content {
+  position: relative;
+  z-index: 10;
+  animation: contentFade 0.8s ease-out 0.2s both;
+}
+
+@keyframes contentFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-title {
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #888;
+  font-weight: 300;
+  margin-bottom: 80px;
+}
+
+.social-section p {
+  font-size: 1.05rem;
+  color: #666;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+/* --- Social Icons --- */
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.social-icons a {
+  width: 50px;
+  height: 50px;
+  border: 1.5px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.social-icons a:hover {
+  background-color: var(--accent-orange);
+  color: #fff;
+  border-color: var(--accent-orange);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 30px rgba(255, 77, 0, 0.2);
+}
+
+/* --- Bottom Navigation --- */
+
+.return-link {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.return-link:hover {
+  gap: 15px;
+  color: var(--accent-orange);
+  transform: translateX(-3px);
+}
+
+/* --- Responsive Design --- */
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 60px;
+  }
+
+  .arc-line {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    top: 20%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .background-glow {
+    width: 300px;
+    height: 300px;
+  }
+
+  .social-icons {
+    gap: 15px;
+  }
+
+  .social-icons a {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .return-link {
+    bottom: 30px;
+    left: 30px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .social-section p {
+    font-size: 0.95rem;
+  }
+
+  .social-icons {
+    gap: 12px;
+  }
+
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .return-link {
+    font-size: 0.8rem;
+  }
+}

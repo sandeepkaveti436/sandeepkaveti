@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Sandeep Portfolio</title>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600&family=Montserrat:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../pages/projectstyles.css" />
+  </head>
+
+  <body class="dark-theme">
+    <!-- Navigation -->
+    <nav>
+     <div class="logo">
+  <!-- Link points to your main home page -->
+  <a href="../index.html" class="logo-link">
+    <div class="logo-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="black">
+        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+      </svg>
+    </div>
+    SANDEEP
+  </a>
+</div>
+
+      <div class="nav-links">
+        <a href="../index.html" id="home">Home</a>
+        <a href="#projects" id="projects">Projects</a>
+        <a href="services.html" id="services">Services</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="../index.html#contact" class="lets-talk-nav">Lets talk ↗</a>
+        <div class="menu-icon"></div>
+      </div>
+    </nav>
+
+    <section class="portfolio-projects">
+      <!-- Background Split Images -->
+      <div class="split-bg">
+       <!-- Note: 'muted' is the most important attribute for autoplay -->
+<video 
+    class="main-video" 
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+    preload="auto" 
+    webkit-playsinline>
+    <source src="../assets/Video/project background video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+      </div>
+
+      <!-- Dark Overlay -->
+      <div class="dark-overlay"></div>
+
+      <!-- Main Content -->
+      <div class="content-wrapper">
+        <div class="top-label">
+          <span class="diamond-teal"></span>
+          OUR PORTFOLIO
+        </div>
+
+        <h1 class="projects-title">PROJECTS</h1>
+
+        <p class="description">
+          Ready to elevate your work? Explore how your project can<br />
+          become a valued addition to our portfolio.
+        </p>
+
+        <!-- Double Border Button -->
+        <div class="button-frame">
+          <a href="javascript:void(0)" class="contact-btn" onclick="handleContact(event)">
+            <span class="diamond-white"></span>
+            Contact Us
+          </a>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <div class="container">
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <a href="../pages/longevtiylounge.html" class="project-card">
+          <div class="image-box">
+            <img src="../assets/LL Mobile Mocup/Main Image.png" alt="Longevity Lounge" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Longevity Lounge <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 2 -->
+        <a href="../pages/nirmalahospitals.html" class="project-card">
+          <div class="image-box">
+            <img src="../assets/Nirmala Hospitals/Main page.png" alt="Nirmala Hospitals" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Nirmala Hospitals <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 3 -->
+        <a href="../pages/omegahospitals.html" class="project-card">
+          <div class="image-box">
+            <img src="../assets/Omega Hospital -Breast Cancer/Bresast cancer.png" alt="Omega Hospitals" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Omega Hospitals <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 4 -->
+        <a href="../pages/alley-design.html" class="project-card">
+          <div class="image-box">
+            <img src="../assets/image4.jpg" alt="Alley Design" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Alley Design <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Add more projects (5-20+) here as needed -->
+        <!-- Project 5 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image3.jpg" alt="Project 5" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 5 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 6 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image4.jpg" alt="Project 6" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 6 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 7 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image5.jpg" alt="Project 7" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 7 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+       <!-- ...existing code up to Project 8... -->
+
+        <!-- Project 8 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image6.jpg" alt="Project 8" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 8 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 9 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image3.jpg" alt="Project 9" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 9 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 10 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image4.jpg" alt="Project 10" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 10 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 11 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image5.jpg" alt="Project 11" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 11 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 12 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image6.jpg" alt="Project 12" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 12 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 13 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image3.jpg" alt="Project 13" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 13 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 14 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image4.jpg" alt="Project 14" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 14 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 15 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image5.jpg" alt="Project 15" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 15 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 16 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image6.jpg" alt="Project 16" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 16 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 17 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image3.jpg" alt="Project 17" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 17 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 18 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image4.jpg" alt="Project 18" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 18 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 19 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image5.jpg" alt="Project 19" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 19 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 20 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image6.jpg" alt="Project 20" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 20 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 21 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image3.jpg" alt="Project 21" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 21 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 22 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image4.jpg" alt="Project 22" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 22 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 23 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image5.jpg" alt="Project 23" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 23 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+
+        <!-- Project 24 -->
+        <a href="#" class="project-card hidden-project">
+          <div class="image-box">
+            <img src="../assets/image6.jpg" alt="Project 24" />
+          </div>
+          <div class="info">
+            <span class="category">UI/UX Design / After Effects / Adobe Illustrator</span>
+            <h2 class="title">Project 24 <span class="arrow">↗</span></h2>
+          </div>
+        </a>
+      </div>
+
+      <div class="footer-action">
+        <button class="load-more">LOAD MORE ↻</button>
+      </div>
+    </div>
+    
+     <!-- Mega Footer -->
+<footer class="mega-footer reveal-section">
+      <div class="footer-inner">
+        <p class="footer-headline">
+          Is there a fascinating project brewing in your mind?
+        </p>
+        <div class="footer-nav-row">
+          <div class="footer-contact">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:sandeepkaveti436@gmail.com"
+              >sandeepkaveti436@gmail.com</a
+            >
+          </div>
+          <div class="nav-links-footer">
+            <a href="../index.html">Home</a>
+            <a href="../index.html">About Me</a>
+            <a href="../pages/project.html">Projects</a>
+            <a href="../pages/services.html">Services</a>
+          </div>
+        </div>
+        <hr class="footer-line" />
+        <h1 class="footer-display-name">SANDEEP KAVETI</h1>
+        <div class="footer-bottom">
+          <div class="footer-socials">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+          <p class="footer-copy">©2026 SANDEEPKAVETI. All rights reserved</p>
+          <div class="footer-top-link">
+            <a href="#home"
+              >SCROLL TOP <i class="fa-regular fa-circle-up"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+        <script>
+           document.addEventListener("DOMContentLoaded", () => {
+    const revealCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    };
+
+    const revealObserver = new IntersectionObserver(revealCallback, {
+      threshold: 0.1 // Trigger when 10% of footer is visible
+    });
+
+    // Watch all sections with the reveal-section class
+    document.querySelectorAll('.reveal-section').forEach(section => {
+      revealObserver.observe(section);
+    });
+  });
+      document.addEventListener('DOMContentLoaded', () => {
+        // Set active nav link
+        const navLinks = document.querySelectorAll('nav .nav-links a');
+        
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          const currentUrl = window.location.pathname;
+          
+          // Remove active class from all links
+          link.classList.remove('active');
+          
+          // Check if this is the projects page
+          if (currentUrl.includes('project.html') || currentUrl.includes('pages/project')) {
+            if (href.includes('project')) {
+              link.classList.add('active');
+            }
+          }
+        });
+
+        // Load more functionality
+        const perPage = 4;
+        const projects = Array.from(document.querySelectorAll('.project-card'));
+        const loadMoreBtn = document.querySelector('.load-more');
+
+        let visibleCount = perPage;
+
+        // Initially hide projects beyond the first `perPage`
+        projects.forEach((p, i) => {
+          if (i >= visibleCount) {
+            p.classList.add('hidden-project');
+          } else {
+            p.classList.remove('hidden-project');
+          }
+        });
+
+        // Hide button if nothing to load
+        if (!loadMoreBtn || projects.length <= visibleCount) {
+          if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+          return;
+        }
+
+        loadMoreBtn.addEventListener('click', () => {
+          // Check if all projects are already visible
+          if (visibleCount >= projects.length) {
+            // Redirect to coming soon page
+            window.location.href = '../pages/coming-soon.html';
+            return;
+          }
+
+          const hidden = projects.filter((_, i) => i >= visibleCount && i < visibleCount + perPage);
+
+          hidden.forEach(p => {
+            p.classList.remove('hidden-project');
+            p.classList.add('show-project');
+          });
+
+          visibleCount += hidden.length;
+
+          // Change button when all projects visible
+          if (visibleCount >= projects.length) {
+            loadMoreBtn.textContent = 'COMING SOON ↻';
+            loadMoreBtn.style.opacity = '0.6';
+          }
+        });
+      });
+    </script>
+  
+  </body>
+</html>
