@@ -74,32 +74,21 @@
         /* --- Navigation --- */
         nav {
             position: fixed;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 1100px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            border-radius: 100px;
-            padding: 12px 30px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            animation: slideDown 1s ease forwards;
         }
 
      
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            font-size: 1.1rem;
+       .logo-main {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
 
       .logo-icon {
@@ -191,13 +180,221 @@
             border-radius: 30px; */
         }
 
-        .menu-icon {
-            width: 24px;
-            height: 12px;
-            border-top: 1px solid white;
-            border-bottom: 1px solid white;
+      .menu-icon {
+            width: 30px;
+            height: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             cursor: pointer;
         }
+         .menu-icon span {
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            transition: 0.3s;
+        }
+         .menu-overlay-showeasy {
+            position: fixed;
+            inset: 0;
+            background-color: var(--bg-dark);
+            z-index: 10000; /* Extremely high to stay on top */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            padding: 50px 7%;
+            /* Animation Logic */
+            transform: translateY(-100%); 
+            transition: transform 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+            pointer-events: none; /* Can't click when hidden */
+            background-color: #000;
+        }
+          /* Class added by JS to show the menu */
+        /* The Active Class added by JS */
+        .menu-overlay-showeasy.active {
+            transform: translateY(0);
+            pointer-events: auto; /* Can click when visible */
+        }
+
+        
+        .overlay-inner {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+            .overlay-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+         .overlay-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .overlay-header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .lets-talk-pill {
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 28px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .lets-talk-pill:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+        .overlay-close-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+  #closeMenu {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            z-index: 10001; /* Higher than the overlay itself */
+        }
+          #closeMenu:hover {
+            background: #fff;
+            color: #000;
+        }
+
+          /* Navigation List */
+         .overlay-nav { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+        .overlay-item {
+            font-size: 4rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+        }
+        .overlay-item:hover { color: var(--accent); }
+        
+        .item-text {
+            font-size: clamp(2.5rem, 8vw, 6.5rem);
+            font-weight: 600;
+            letter-spacing: -3px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .item-text small {
+            font-size: 1.1rem;
+            color: #555;
+            margin-left: 15px;
+            font-weight: 400;
+            margin-top: 15px;
+            letter-spacing: 0;
+        }
+
+        .item-circle {
+            width: 70px;
+            height: 70px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+          /* Hover States */
+        .overlay-item:hover .item-circle {
+            background-color: #fff;
+            color: #000;
+            transform: rotate(-45deg);
+        }
+
+        .overlay-item:hover .item-text {
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Footer */
+        .overlay-footer {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 60px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .section-label {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .newsletter-wrap {
+            display: flex;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            width: 350px;
+            padding-bottom: 10px;
+        }
+
+        .newsletter-wrap input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            flex: 1;
+            outline: none;
+            font-size: 0.95rem;
+        }
+
+        .newsletter-btn {
+            background: transparent;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
 
         /* --- Hero Section --- */
         .hero {
@@ -983,6 +1180,8 @@ html {
 @media (max-width: 1024px) {
     .container {
         padding: 60px 25px;
+        .item-text { font-size: 4.5rem; }
+            .newsletter-wrap { width: 100%; }
     }
 
     .main-heading {
@@ -1009,6 +1208,13 @@ html {
    MOBILE RESPONSIVENESS (768px and below)
    ============================================================ */
 @media (max-width: 768px) {
+    .menu-overlay-showeasy { padding: 30px 6%; }
+            .overlay-item { padding: 20px 0; }
+            .item-text { font-size: 3rem; letter-spacing: -1px; }
+            .item-circle { width: 50px; height: 50px; font-size: 1.1rem; }
+            .lets-talk-pill { display: none; }
+            .overlay-footer { flex-direction: column; gap: 50px; }
+            .social-links { flex-wrap: wrap; gap: 20px; }
     /* --- Navigation --- */
     nav {
         width: 95%;
@@ -1253,3 +1459,4 @@ html {
         transform: scale(1.5); /* Zooms into the globe detail */
     }
 }
+

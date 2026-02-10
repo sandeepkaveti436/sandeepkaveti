@@ -56,7 +56,67 @@
 
       <div class="nav-right">
         <a href="#contact" class="lets-talk-nav">Lets talk ↗</a>
-        <div class="menu-icon"></div>
+         <div class="logo-main"></div>
+        <!-- THIS WAS MISSING: The button to click -->
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+        </div>
+         <!-- Full Screen Showeasy Menu -->
+    <div class="menu-overlay-showeasy" id="menuOverlay">
+        <div class="overlay-inner">
+            
+            <!-- Top Header -->
+            <header class="overlay-header">
+                <div class="overlay-logo">sandeep.</div>
+                <div class="overlay-header-right">
+                    <a href="#contact" class="lets-talk-pill">Let's Talk →</a>
+                    <button class="overlay-close-btn" id="closeMenu">✕</button>
+                </div>
+            </header>
+
+            <!-- Main Nav List -->
+            <nav class="overlay-nav">
+                <a href="#" class="overlay-item">
+                    <span class="item-text">Home <small>(01)</small></span>
+                    <div class="item-circle">→</div>
+                </a>
+                <a href="#" class="overlay-item">
+                    <span class="item-text">About Me <small>(02)</small></span>
+                    <div class="item-circle">→</div>
+                </a>
+                <a href="#" class="overlay-item">
+                    <span class="item-text">Works <small>(03)</small></span>
+                    <div class="item-circle">→</div>
+                </a>
+                <a href="#" class="overlay-item">
+                    <span class="item-text">Insights <small>(04)</small></span>
+                    <div class="item-circle">→</div>
+                </a>
+            </nav>
+
+            <!-- Footer Area -->
+            <footer class="overlay-footer">
+                <div class="footer-left">
+                    <p class="section-label">Follow me.</p>
+                    <div class="social-links">
+                        <a href="#">INSTAGRAM ↗</a>
+                        <a href="#">BEHANCE ↗</a>
+                        <a href="#">TWITTER ↗</a>
+                        <a href="#">DRIBBBLE ↗</a>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p class="section-label">Stay connected w/ me.</p>
+                    <div class="newsletter-wrap">
+                        <input type="email" placeholder="Enter your email">
+                        <button class="newsletter-btn">↗</button>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
       </div>
     </nav>
 
@@ -332,6 +392,31 @@
     </footer>
 
     <script>
+      document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.querySelector('.menu-icon'); 
+            const closeBtn = document.getElementById('closeMenu');
+            const overlay = document.getElementById('menuOverlay');
+            const navItems = document.querySelectorAll('.overlay-item');
+
+            // Open Menu
+            menuBtn.addEventListener('click', () => {
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+            });
+
+            // Close Menu
+            const hideMenu = () => {
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto'; 
+            };
+
+            closeBtn.addEventListener('click', hideMenu);
+
+            // Close on link click
+            navItems.forEach(item => {
+                item.addEventListener('click', hideMenu);
+            });
+        });
        document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelectorAll('nav .nav-links a');
         const currentPage = window.location.pathname;
