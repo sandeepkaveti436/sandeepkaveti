@@ -1,365 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandeep - Showeasy Menu</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- General Reset --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandeep - Menu</title>
 
-        body {
-            background-color: #050505;
-            color: #fff;
-            height: 200vh; /* Just to test scrolling */
-        }
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        /* --- 1. THE NAVIGATION (Trigger Button) --- */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 30px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-        }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
 
-        .logo-main {
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
+body {
+  background: #080a0c;
+  color: #fff;
+  overflow: hidden;
+}
 
-        /* The button that opens the menu */
-        .menu-icon {
-            width: 30px;
-            height: 14px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-        }
+/* MENU OVERLAY */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 40px 6%;
+  display: flex;
+  flex-direction: column;
+}
 
-        .menu-icon span {
-            width: 100%;
-            height: 2px;
-            background-color: #fff;
-            transition: 0.3s;
-        }
+/* HEADER */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        /* --- 2. THE MENU OVERLAY --- */
-        .menu-overlay-showeasy {
-            position: fixed;
-            inset: 0;
-            background-color: #0d0e11; /* Dark Matte Navy/Black */
-            z-index: 10000;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            padding: 50px 7%;
-            /* Animation starts hidden above */
-            transform: translateY(-100%);
-            transition: transform 0.85s cubic-bezier(0.8, 0, 0.2, 1);
-            overflow-y: auto;
-        }
+.menu-logo {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
 
-        /* Class added by JS to show the menu */
-        .menu-overlay-showeasy.active {
-            transform: translateY(0);
-        }
+.menu-controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 
-        .overlay-inner {
-            max-width: 1400px;
-            width: 100%;
-            margin: 0 auto;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
+.menu-talk-btn {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
 
-        /* Header inside overlay */
-        .overlay-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 60px;
-        }
+.menu-talk-btn:hover {
+  background: #fff;
+  color: #000;
+}
 
-        .overlay-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
+.menu-close {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
 
-        .overlay-header-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+.menu-close:hover {
+  transform: rotate(90deg);
+ 
+  color: #fff;
+  background-color: red;
+}
 
-        .lets-talk-pill {
-            text-decoration: none;
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 12px 28px;
-            border-radius: 100px;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
+/* MAIN NAV */
+.menu-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
 
-        .lets-talk-pill:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px 0;
+  overflow: hidden;
+}
 
-        .overlay-close-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.2);
-            color: #fff;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-        }
+.menu-item a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transform: translateY(120%);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
 
-        .overlay-close-btn:hover { background: #fff; color: #000; }
+.menu-overlay.active .menu-item a {
+  transform: translateY(0);
+}
 
-        /* Navigation List */
-        .overlay-nav {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
+/* Stagger animations for each item */
+.menu-item:nth-child(1) a { transition-delay: 0.2s; }
+.menu-item:nth-child(2) a { transition-delay: 0.3s; }
+.menu-item:nth-child(3) a { transition-delay: 0.4s; }
+.contact-wrapper:nth-child(4) a { transition-delay: 0.6s; }
 
-        .overlay-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-decoration: none;
-            color: #fff;
-            padding: 30px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: 0.4s;
-        }
+.m-text {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 700;
+  color: whitesmoke;
+}
 
-        .item-text {
-            font-size: clamp(2.5rem, 8vw, 6.5rem);
-            font-weight: 600;
-            letter-spacing: -3px;
-            display: flex;
-            align-items: flex-start;
-        }
+.m-num {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 15px;
+}
 
-        .item-text small {
-            font-size: 1.1rem;
-            color: #555;
-            margin-left: 15px;
-            font-weight: 400;
-            margin-top: 15px;
-            letter-spacing: 0;
-        }
+.m-arrow {
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        .item-circle {
-            width: 70px;
-            height: 70px;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        }
+/* Contact dropdown */
+.contact-wrapper {
+  position: relative;
+  display: inline-block;
+  
+}
+.contact-wrapper > a {
+  text-decoration: none !important;
+  transform: translateY(0);
+  transform: translateY(120%);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
 
-        /* Hover States */
-        .overlay-item:hover .item-circle {
-            background-color: #fff;
-            color: #000;
-            transform: rotate(-45deg);
-        }
+/* Animate contact options */
+.contact-wrapper a {
+  text-decoration: none !important;
+  transform: translateY(0); /* Remove extra transform */
+}
 
-        .overlay-item:hover .item-text {
-            color: rgba(255,255,255,0.5);
-        }
+.contact-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  flex-direction: column;
+  gap: 10px;
 
-        /* Footer */
-        .overlay-footer {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 60px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
+  display: flex; /* Always flex */
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none; /* Prevent clicking when hidden */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Animate opacity + transform */
+}
 
-        .section-label {
-            color: #555;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
+.contact-options.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; /* Enable clicking when visible */
+}
 
-        .social-links {
-            display: flex;
-            gap: 30px;
-        }
+.contact-options a {
+  color: black !important;
+  text-decoration: none;
+}
+.contact-options a:hover {
+  color: #888;
+}
 
-        .social-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
+.menu-item.contact-wrapper a {
+  transform: translateY(120%);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0.5s; /* same as step delay */
+}
 
-        .newsletter-wrap {
-            display: flex;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            width: 350px;
-            padding-bottom: 10px;
-        }
+/* FOOTER */
+.menu-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-        .newsletter-wrap input {
-            background: transparent;
-            border: none;
-            color: #fff;
-            flex: 1;
-            outline: none;
-            font-size: 0.95rem;
-        }
+.m-label {
+  color: #555;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
 
-        .newsletter-btn {
-            background: transparent;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
+.m-socials {
+  display: flex;
+  gap: 20px;
+}
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 1024px) {
-            .item-text { font-size: 4.5rem; }
-            .newsletter-wrap { width: 100%; }
-        }
+.m-socials a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
 
-        @media (max-width: 768px) {
-            .menu-overlay-showeasy { padding: 30px 6%; }
-            .overlay-item { padding: 20px 0; }
-            .item-text { font-size: 3rem; letter-spacing: -1px; }
-            .item-circle { width: 50px; height: 50px; font-size: 1.1rem; }
-            .lets-talk-pill { display: none; }
-            .overlay-footer { flex-direction: column; gap: 50px; }
-            .social-links { flex-wrap: wrap; gap: 20px; }
-        }
-    </style>
+.m-email-box {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 8px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.m-email-box input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+}
+.logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        font-size: 1.1rem;
+        color: white;
+        text-decoration: none;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
 </head>
+
 <body>
 
-    <!-- Main Nav with Hamburger -->
-    <nav>
-        <div class="logo-main">sandeep.</div>
-        <!-- THIS WAS MISSING: The button to click -->
-        <div class="menu-icon">
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+<div class="menu-overlay" id="menuPage">
 
-    <!-- Full Screen Showeasy Menu -->
-    <div class="menu-overlay-showeasy" id="menuOverlay">
-        <div class="overlay-inner">
-            
-            <!-- Top Header -->
-            <header class="overlay-header">
-                <div class="overlay-logo">sandeep.</div>
-                <div class="overlay-header-right">
-                    <a href="#contact" class="lets-talk-pill">Let's Talk →</a>
-                    <button class="overlay-close-btn" id="closeMenu">✕</button>
-                </div>
-            </header>
+ <div class="menu-header">
+  <a href="../index.html" class="logo">
+    <div class="logo-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="black">
+        <path
+          d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+        />
+      </svg>
+    </div>
+    SANDEEP
+  </a>
 
-            <!-- Main Nav List -->
-            <nav class="overlay-nav">
-                <a href="#" class="overlay-item">
-                    <span class="item-text">Home <small>(01)</small></span>
-                    <div class="item-circle">→</div>
-                </a>
-                <a href="#" class="overlay-item">
-                    <span class="item-text">About Me <small>(02)</small></span>
-                    <div class="item-circle">→</div>
-                </a>
-                <a href="#" class="overlay-item">
-                    <span class="item-text">Works <small>(03)</small></span>
-                    <div class="item-circle">→</div>
-                </a>
-                <a href="#" class="overlay-item">
-                    <span class="item-text">Insights <small>(04)</small></span>
-                    <div class="item-circle">→</div>
-                </a>
-            </nav>
+  <div class="menu-controls">
+    <a href="tel:+919392525043" class="menu-talk-btn">Lets Talk</a>
+    <a href="../index.html" class="menu-close">
+      <i class="fa-solid fa-xmark"></i>
+    </a>
+  </div>
+</div>
 
-            <!-- Footer Area -->
-            <footer class="overlay-footer">
-                <div class="footer-left">
-                    <p class="section-label">Follow me.</p>
-                    <div class="social-links">
-                        <a href="#">INSTAGRAM ↗</a>
-                        <a href="#">BEHANCE ↗</a>
-                        <a href="#">TWITTER ↗</a>
-                        <a href="#">DRIBBBLE ↗</a>
-                    </div>
-                </div>
-                <div class="footer-right">
-                    <p class="section-label">Stay connected w/ me.</p>
-                    <div class="newsletter-wrap">
-                        <input type="email" placeholder="Enter your email">
-                        <button class="newsletter-btn">↗</button>
-                    </div>
-                </div>
-            </footer>
 
-        </div>
+  <div class="menu-main">
+    <nav style="width:100%">
+      <div class="menu-item">
+        <a href="../index.html"> <!-- Navigate to home -->
+          <span class="m-text">Home</span>
+          <span class="m-num">(01)</span>
+        </a>
+        <div class="m-arrow">→</div>
+      </div>
+
+      <div class="menu-item">
+        <a href="../index.html"> <!-- Navigate to about -->
+          <span class="m-text">About Me</span>
+          <span class="m-num">(02)</span>
+        </a>
+        <div class="m-arrow">→</div>
+      </div>
+
+      <div class="menu-item">
+        <a href="../pages/project.html"> <!-- Navigate to works/projects -->
+          <span class="m-text">Works</span>
+          <span class="m-num">(03)</span>
+        </a>
+        <div class="m-arrow">→</div>
+      </div>
+
+ <div class="contact-wrapper">
+  <a href="#" onclick="toggleContactOptions(event)">
+    <span class="m-text">Contact</span>
+    <span class="m-num">(04)</span>
+  </a>
+
+  <div class="contact-options" id="contactOptions">
+    <a href="tel:+919812345678">📞 Call</a>
+    <a href="https://wa.me/919812345678" target="_blank">💬 WhatsApp</a>
+    <a href="mailto:sandeepkaveti436@gmail.com">📧 Mail</a>
+  </div>
+</div>
+
+
+  </div>
+
+  <div class="menu-footer">
+    <div>
+      <p class="m-label">Follow me</p>
+      <div class="m-socials">
+        <a href="https://www.instagram.com/sandeepkaveti436/">INSTAGRAM ↗</a>
+        <a href="https://dribbble.com/sandeepkaveti">BEHANCE ↗</a>
+        <a href="https://www.linkedin.com/in/sandeepsandy">DRIBBLE ↗</a>
+        <a href="https://www.linkedin.com/in/sandeepsandy">LINKEDIN ↗</a>
+      </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuBtn = document.querySelector('.menu-icon'); 
-            const closeBtn = document.getElementById('closeMenu');
-            const overlay = document.getElementById('menuOverlay');
-            const navItems = document.querySelectorAll('.overlay-item');
+    <div>
+      <p class="m-label">Stay connected</p>
+      <div class="m-email-box">
+        <input type="email" placeholder="Enter your email">
+        <span>↗</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-            // Open Menu
-            menuBtn.addEventListener('click', () => {
-                overlay.classList.add('active');
-                document.body.style.overflow = 'hidden'; 
-            });
+<script>
+// Trigger menu animation on page load
+function toggleContactOptions(event) {
+    event.preventDefault();
+    event.stopPropagation(); // VERY IMPORTANT
 
-            // Close Menu
-            const hideMenu = () => {
-                overlay.classList.remove('active');
-                document.body.style.overflow = 'auto'; 
-            };
+    const menu = document.getElementById("contactOptions");
 
-            closeBtn.addEventListener('click', hideMenu);
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
 
-            // Close on link click
-            navItems.forEach(item => {
-                item.addEventListener('click', hideMenu);
-            });
-        });
-    </script>
+// Close when clicking anywhere outside
+document.addEventListener("click", function (e) {
+    const wrapper = document.querySelector(".contact-wrapper");
+    const menu = document.getElementById("contactOptions");
+
+    if (!wrapper.contains(e.target)) {
+        menu.style.display = "none";
+    }
+});
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('menuPage').classList.add('active');
+  }, 100);
+});
+
+// Toggle Contact options dropdown
+function toggleContactOptions(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  const menu = document.getElementById('contactOptions');
+  menu.classList.toggle('show');
+}
+
+document.addEventListener('click', function(e) {
+  const wrapper = document.querySelector('.contact-wrapper');
+  const menu = document.getElementById('contactOptions');
+  if (!wrapper.contains(e.target)) {
+    menu.classList.remove('show');
+  }
+});
+
+
+</script>
+
 </body>
 </html>
