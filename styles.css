@@ -984,26 +984,6 @@
     cursor: pointer;
     font-size: 0.85rem;
     transition: 0.3s;
-}
-
-.toggle-btn.active {
-    background: #fff;
-    color: #000;
-    border-color: #fff;
-}
-
-/* Send Button */
-.submit-btn {
-    width: 100%;
-    padding: 18px;
-    background-color: #0d1117; /* Very dark navy/black */
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
