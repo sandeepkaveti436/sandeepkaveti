@@ -9,9 +9,6 @@
   --glass: rgba(255, 255, 255, 0.05);
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.1);
-  --cyan: #00d4ff;
-  --white: #ffffff;
-  --bg-dark: #0a0a0a;
 }
 
 * {
@@ -20,7 +17,6 @@
   box-sizing: border-box;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
-
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -32,20 +28,8 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
 }
-/* --- Background Effects --- */
-.background-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
 
+/* --- Navigation --- */
 nav {
   position: fixed;
   top: 40px;
@@ -64,19 +48,31 @@ nav {
   align-items: center;
   z-index: 100;
   animation: slideDown 1s ease forwards;
+  gap: 10px;
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -50px);
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  nav {
+    width: 90%; /* Increase width to give links room */
+    top: 20px; /* Bring it closer to the top to save space */
+    padding: 10px 20px; /* Slightly tighter padding */
+    border-radius: 50px; /* Keep the rounded look */
   }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0);
+
+  /* Optional: If you have a logo and links, you might want to adjust them here */
+  nav a {
+    font-size: 14px; /* Smaller font for mobile */
   }
 }
 
+/* Extra small devices (Phones) */
+@media (max-width: 480px) {
+  nav {
+    width: 95%; /* Almost full width but still floating */
+    padding: 8px 15px;
+  }
+}
 .logo {
   display: flex;
   align-items: center;
@@ -95,7 +91,6 @@ nav {
   justify-content: center;
   align-items: center;
 }
-
 .nav-links {
   display: flex;
   gap: 40px;
@@ -119,7 +114,6 @@ nav {
   align-items: center;
   gap: 25px;
 }
-
 .lets-talk-nav {
   text-decoration: none;
   color: white;
@@ -132,9 +126,17 @@ nav {
 .lets-talk-nav:hover {
   color: var(--blue);
 }
+
+.menu-icon {
+  width: 24px;
+  height: 12px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+}
 /* ==========================================================================
-    MENU OVERLAY (Slide from Top)
-    ========================================================================== */
+   MENU OVERLAY (Slide from Top)
+   ========================================================================== */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -157,11 +159,15 @@ nav {
   transform: translateY(0);
   visibility: visible;
 }
+/* ==========================================================================
+   HEADER SECTION
+   ========================================================================== */
 .menu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -182,6 +188,7 @@ nav {
   justify-content: center;
   align-items: center;
 }
+
 .menu-controls {
   display: flex;
   gap: 20px;
@@ -221,9 +228,10 @@ nav {
   background-color: #ff4d4d; /* Softer red */
   border-color: transparent;
 }
+
 /* ==========================================================================
-    MAIN NAVIGATION LINKS
-    ========================================================================== */
+   MAIN NAVIGATION LINKS
+   ========================================================================== */
 .menu-main {
   flex: 1;
   display: flex;
@@ -295,8 +303,8 @@ nav {
 }
 
 /* ==========================================================================
-    CONTACT DROPDOWN
-    ========================================================================== */
+   CONTACT DROPDOWN
+   ========================================================================== */
 .contact-wrapper {
   position: relative;
   display: block;
@@ -340,9 +348,10 @@ nav {
 .contact-options a:hover {
   color: #666 !important;
 }
+
 /* ==========================================================================
-    FOOTER SECTION
-    ========================================================================== */
+   FOOTER SECTION
+   ========================================================================== */
 .menu-footer {
   display: flex;
   justify-content: space-between;
@@ -398,268 +407,799 @@ nav {
   cursor: pointer;
 }
 
-/* Hero Section */
+.project-grid {
+  display: grid;
+  /* Creates 2 equal columns */
+  grid-template-columns: repeat(2, 1fr);
+  /* Space between the projects */
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px; /* Optional: keeps the grid from getting too wide */
+  margin: 0 auto;
+}
+
+/* Responsive: Switch to 1 column on mobile devices */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer styles */
+.footer-section {
+  background-color: #050505;
+  color: #ffffff;
+  padding: 80px 40px 30px 40px;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Top Tagline --- */
+.footer-tagline {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #efefef;
+  margin-bottom: 60px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* --- Nav Row --- */
+.footer-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.footer-email {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-email i {
+  font-size: 1.1rem;
+}
+
+.footer-email a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: opacity 0.3s;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ff8c00;
+}
+
+/* --- Horizontal Line --- */
+.footer-line {
+  border: none;
+  border-top: 1px solid #333;
+  margin-bottom: 40px;
+}
+
+/* --- Giant Branding (Key Feature) --- */
+.footer-brand-name {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.footer-brand-name h1 {
+  font-size: 10vw; /* Keeps the giant size */
+  font-weight: 900;
+  margin: 0;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  display: flex; /* Helps align the spans */
+  justify-content: center;
+}
+
+/* Styling for each individual letter */
+.footer-brand-name h1 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-30px); /* Start slightly to the left */
+  filter: blur(5px); /* Optional: adds a smooth reveal feel */
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  /* The magic staggered delay */
+  transition-delay: calc(var(--index) * 0.05s);
+}
+
+/* When the section becomes active (scrolled into view) */
+.footer-brand-name.active h1 span {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+/* --- Bottom Row --- */
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Socials */
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  color: #ff8c00;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+}
+
+/* Copyright */
+.footer-copyright {
+  color: var(--f-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Scroll Top */
+.footer-scroll a {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.scroll-circle {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #444;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .footer-nav-row {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 60px 20px 30px 20px;
+  }
+
+  .footer-tagline {
+    font-size: 1.1rem;
+  }
+  .footer-tags {
+    gap: 4px;
+    font-size: 0.5rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    margin: 14px;
+  }
+
+  .footer-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-brand-name h1 {
+    font-size: 12vw;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .footer-scroll {
+    order: -1; /* Scroll top moves up on mobile */
+  }
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  nav {
+    width: 90%; /* Increase width to give links room */
+    top: 20px; /* Bring it closer to the top to save space */
+    padding: 10px 20px; /* Slightly tighter padding */
+    border-radius: 50px; /* Keep the rounded look */
+  }
+
+  /* Optional: If you have a logo and links, you might want to adjust them here */
+  nav a {
+    font-size: 14px; /* Smaller font for mobile */
+  }
+}
+
+/* Extra small devices (Phones) */
+@media (max-width: 480px) {
+  nav {
+    width: 95%; /* Almost full width but still floating */
+    padding: 8px 15px;
+  }
+}
+@keyframes raiseUp {
+  0% {
+    opacity: 0;
+    transform: translateY(110%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* --- Animations --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hero h1 {
+    font-size: 1.6rem;
+    font-weight: 200;
+    line-height: 1.1;
+  }
+  footer {
+    font-size: 0.6rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .footer-sep {
+    display: none;
+  }
+}
+/* Mobile Adjustments */
+@media (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .main-heading {
+    font-size: 2.2rem;
+  }
+}
+
+/* Hero section */
 .hero {
   position: relative;
   height: 80vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80");
-  background-size: cover;
-  background-position: center;
+  overflow: hidden; /* Prevents video from spilling out */
   color: white;
-  padding: 20px;
+}
+
+/* Video Styling */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 40%;
+  min-height: 60%;
+  width: auto;
+  height: auto;
+  z-index: -2; /* Place behind everything */
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Important: fills the container without stretching */
+}
+
+/* Dark Overlay */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust opacity (0.5) to make text more or less readable */
+  z-index: -1; /* Place between video and text */
 }
 
 .hero-content {
+  position: relative;
+  z-index: 1; /* Ensures content is on top */
   max-width: 800px;
+  padding: 0 20px;
   animation: fadeIn 1.5s ease-out;
+}
+
+/* Keep your existing animations from the previous models */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .subheading {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 4px;
-  margin-bottom: 10px;
-  display: block;
   color: #d1d1d1;
+  display: block;
+  margin-bottom: 15px;
 }
 
 .heading {
-  font-size: 3.5rem;
-  font-weight: 300;
+  font-size: clamp(3rem, 8vw, 5rem);
   margin-bottom: 20px;
+  font-weight: 300;
 }
 
 .paragraph {
   font-size: 1.1rem;
-  font-weight: 300;
-  margin-bottom: 30px;
+  line-height: 1.8;
+  margin-bottom: 40px;
   opacity: 0.9;
 }
 
-/* Animated Button */
+/* Button with a slight glass effect to match the video feel */
 .btn-contact {
   display: inline-block;
   padding: 15px 40px;
   border: 1px solid white;
   color: white;
   text-decoration: none;
-  position: relative;
-  transition: all 0.4s ease;
-  background: transparent;
-  overflow: hidden;
-  font-size: 0.9rem;
   letter-spacing: 2px;
+  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
 }
 
 .btn-contact:hover {
   background: white;
-  color: #222;
+  color: black;
 }
 
-        .mission-section {
-            padding: 100px 10%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+/* Projects Sections */
+.mission-section {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-        .mission-header {
-            width: 100%;
-            margin-bottom: 60px;
-            text-align: center;
-        }
+/* Initial State */
+.mission-header {
+    opacity: 0;
+    filter: blur(15px); /* Start blurred */
+    transform: translateY(50px); /* Start lower */
+    transition: 
+        opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, filter, transform;
+    margin-bottom: 60px;
+}
+/* State when scrolled into view */
+.mission-header.active {
+    opacity: 1;
+    filter: blur(0px); /* Clear blur */
+    transform: translateY(0); /* Slide up to original position */
+}
 
-        .mission-heading {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+/* Optional: Subtle staggered delay for the paragraph inside */
+.mission-header.active p {
+    transition-delay: 0.2s;
+    text-align: center;
+}
 
-        /* Project Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 60px 40px;
-            width: 100%;
-            max-width: 1200px;
-        }
+.mission-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  align-items: center; /* Centers items horizontally in flex */
+    justify-content: center;
+    text-align: center;
+}
 
-        .project-card {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: projectFadeIn 0.8s forwards ease-out;
-        }
+/* Project Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 40px;
+  width: 100%;
+  max-width: 1200px;
+}
 
-        @keyframes projectFadeIn {
-            to { opacity: 1; transform: translateY(0); }
-        }
+.project-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: projectFadeIn 0.8s forwards ease-out;
+  display: block; /* Makes the entire area clickable */
+  text-decoration: none; /* Removes default underline */
+  color: inherit; /* Keeps your text white/main color */
+  cursor: pointer;
+}
 
-        .img-box {
-            position: relative;
-            aspect-ratio: 16/10;
-            overflow: hidden;
-            background: #1a1a1a;
-        }
+@keyframes projectFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-        .img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
-        }
+/* Base Styles */
+.img-box {
+  position: relative;
+  aspect-ratio: 16/10; /* Keeps 16:10 ratio on all devices */
+  overflow: hidden;
+  background: #1a1a1a;
+  border-radius: 12px;
+}
 
-        .project-card:hover .img-box img {
-            transform: scale(1.08);
-        }
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
 
-        .project-info {
-             display: flex;
-    justify-content: space-between; /* Pushes H3 to left and Arrow to right */
-    align-items: center;           /* Vertically centers them */
-    margin-top: 20px;
-    margin-bottom: 8px; 
-        }
+/* Optional: Hover Zoom Effect */
+.img-box:hover img {
+  transform: scale(1.05);
+}
 
-        .project-info h3 {
-             margin: 0;
-    font-family: 'Playfair Display', serif; /* Or your chosen font */
-    font-size: 1.5rem; 
-        }
+/* Mobile & Tablet Responsive */
+@media (max-width: 1024px) {
+  .img-box {
+    border-radius: 12px; /* Slightly smaller corners */
+    aspect-ratio: 1/2; /* Adjust ratio for smaller screens if needed */
+    height: 60%;
+    width: 100%;
+  }
+}
 
-        /* Arrow Styling & Initial State */
+@media (max-width: 768px) {
+  .img-box {
+    border-radius: 12px;
+    aspect-ratio: 1; /* Make it almost square on mobile for better fit */
+  }
+}
+
+@media (max-width: 480px) {
+  .img-box {
+    border-radius: 10px;
+    aspect-ratio: 1; /* Keeps square on very small devices */
+  }
+
+  .img-box img {
+    object-position: center; /* Ensure key part of image stays visible */
+  }
+}
+
+.project-card:hover .img-box img {
+  transform: scale(1.08);
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between; /* Pushes H3 to left and Arrow to right */
+  align-items: center; /* Vertically centers them */
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.project-info h3 {
+  margin: 0;
+  font-family: "Playfair Display", serif; /* Or your chosen font */
+  font-size: 1.5rem;
+}
+
+/* Arrow Styling & Initial State */
 .project-info i {
-    font-size: 1.2rem;
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    transform: translateX(0);
-    opacity: 0.7;
+  font-size: 1.2rem;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateX(0);
+  opacity: 0.7;
 }
 
-    /* Paragraph Styling (The tags below) */
+/* Paragraph Styling (The tags below) */
 .project-card > p {
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    color: var(--accent); /* Using the gold color from previous models */
-    margin: 0;
-    text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--accent); /* Using the gold color from previous models */
+  margin: 0;
+  text-transform: uppercase;
 }
 
 /* 1. Move the arrow to the right and make it brighter */
 /* Hover Animation: -45 Degree Cross Up */
 .project-card:hover .project-info i {
-    /* Rotates -45 degrees and moves slightly up and right for a "cross-up" feel */
-    transform: rotate(-45deg) translate(2px, -2px);
-    color: #c5a358; /* Optional: adds a highlight color on hover */
+  transform: rotate(-45deg);
+  color: #c5a358;
 }
 
 /* 2. Optional: Subtle lift on the whole card */
 .project-card {
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
-        /* --- Load More Button & Sparkles --- */
-        .controls {
-            margin-top: 80px;
-            position: relative;
-        }
+/* --- Load More Button & Sparkles --- */
+.controls {
+  margin-top: 80px;
+  position: relative;
+}
 
-        .btn-load {
-            position: relative;
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            padding: 18px 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            cursor: pointer;
-            overflow: visible; /* To allow sparkles to fly out */
-            transition: all 0.3s;
-            z-index: 10;
-        }
+.btn-load {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 18px 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  overflow: visible; /* To allow sparkles to fly out */
+  transition: all 0.3s;
+  z-index: 10;
+}
 
-        .btn-load:hover {
-            background: var(--accent);
-            color: var(--blue);
-        }
+.btn-load:hover {
+  background: var(--accent);
+  color: var(--blue);
+}
 
-        /* Sparkle Particle Styling */
-        .sparkle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9;
-        }
+/* Sparkle Particle Styling */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9;
+}
 
-        /* --- Popup Modal --- */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(8px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-        }
+/* --- Popup Modal --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
 
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
 
-        .modal-content {
-            background: #1a1a1a;
-            border: 1px solid var(--accent);
-            padding: 60px;
-            text-align: center;
-            max-width: 400px;
-            transform: scale(0.8);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+.modal-content {
+  background: #1a1a1a;
+  border: 1px solid var(--accent);
+  padding: 60px;
+  text-align: center;
+  max-width: 400px;
+  transform: scale(0.8);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
 
-        .modal-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
+.modal-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
 
-        .modal-content p {
-            color: var(--text-dim);
-            margin-bottom: 30px;
-        }
+.modal-content p {
+  color: var(--text-dim);
+  margin-bottom: 30px;
+}
 
-        .close-modal {
-            background: var(--accent);
-            color: var(--bg-dark);
-            border: none;
-            padding: 12px 30px;
-            cursor: pointer;
-            font-weight: 600;
-        }
+.close-modal {
+  background: var(--accent);
+  color: var(--bg-dark);
+  border: none;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-weight: 600;
+}
 
-        @media (max-width: 768px) {
-            .projects-grid { grid-template-columns: 1fr; }
-        }
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Responsive for .menu-footer */
+@media (max-width: 1024px) {
+  .menu-footer {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align all items */
+    justify-content: center; /* Center vertically if needed */
+    text-align: center; /* Center text */
+    padding-top: 20px; /* Reduce top padding on smaller screens */
+    margin-bottom: 20px; /* Keep spacing consistent */
+    gap: 20px; /* Space between stacked items */
+  }
+}
+.menu-footer a {
+  display: inline-block;
+  margin: 5px 10px;
+  word-break: break-word; /* Prevent overflow on small screens */
+}
+
+@media (max-width: 480px) {
+  .menu-footer {
+    padding-top: 15px;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mission-section {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mission-heading {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+   
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-section {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mission-heading {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    align-items: center; /* Centers items horizontally in flex */
+    justify-content: center;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr; /* Simplest way to stack */
+    gap: 30px; /* Space between different project cards */
+    width: 100%;
+    padding: 0 10px;
+  }
+  .project-card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: projectFadeIn 0.8s forwards ease-out;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    gap: 10px 10px;
+  }
+  .img-box {
+    width: 100%;
+    height: auto; /* Let the aspect ratio do the heavy lifting */
+    aspect-ratio: 1 / 0;
+    border-radius: 12px;
+    margin-bottom: 12px; /* Controlled space between image and text */
+  }
+
+  .project-info {
+    margin-top: 18px;
+    margin-bottom: 11px;
+  }
+
+  .project-card > p {
+    margin: 15px 0;
+    padding: 0;
+    line-height: 2;
+  }
+}
+@media (max-width: 480px) {
+  .mission-section {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mission-heading {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    
+  }
+}

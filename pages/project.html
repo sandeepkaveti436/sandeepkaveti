@@ -17,11 +17,9 @@
     />
     <link rel="stylesheet" href="./projectstyles.css" />
   </head>
-
   <body>
-    <div class="background-container">
-
-    </div>
+    
+    <!-- Navbar -->
     <nav>
       <div class="logo">
         <div class="logo-icon">
@@ -35,28 +33,18 @@
       </div>
       <div class="nav-links">
         <a href="../index.html">Home</a>
-        <a href="./pages/project.html">Projects</a>
-        <a href="./pages/services.html">Services</a>
+        <a href="./project.html">Projects</a>
+        <a href="./services.html">Services</a>
       </div>
       <div class="nav-right">
-        <a href="#contact" class="lets-talk-nav">Lets talk ↗</a>
-        <a href="javascript:void(0)" class="menu-icon" id="openMenu">
-          <div
-            style="
-              width: 25px;
-              height: 1px;
-              background: white;
-              margin-bottom: 6px;
-            "
-          ></div>
-          <div style="width: 25px; height: 1px; background: white"></div>
-        </a>
+        <a href="tel:+919392525043" class="lets-talk-nav">Lets talk ↗</a>
+        <a href="javascript:void(0)" class="menu-icon" id="openMenu"> </a>
       </div>
     </nav>
 
     <div class="menu-overlay" id="menuPage">
       <div class="menu-header">
-        <a href="index.html" class="logo">
+        <a href="../index.html" class="logo">
           <div class="logo-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="black">
               <path
@@ -77,14 +65,14 @@
       <div class="menu-main">
         <div class="inner-nav" style="width: 100%">
           <div class="menu-item">
-            <a href="index.html">
+            <a href="../index.html">
               <span class="m-text">Home</span>
               <span class="m-num">(01)</span>
             </a>
             <div class="m-arrow">→</div>
           </div>
           <div class="menu-item">
-            <a href="#about">
+            <a href="../index.html">
               <span class="m-text">About Me</span>
               <span class="m-num">(02)</span>
             </a>
@@ -141,133 +129,231 @@
       </div>
     </div>
 
+    <!-- Hero Section -->
+    <section class="hero">
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="../assets/Video/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-   <section class="hero">
-        <div class="hero-content">
-            <span class="subheading">Ourpjojects</span>
-            <h1 class="heading">Projects</h1>
-            <p class="paragraph">
-                We believe in the harmony of form and function. Our mission is to bridge the gap between traditional craft and modern innovation, creating spaces that inspire and endure.
-            </p>
-            <a href="#" class="btn-contact">CONTACT US</a>
-        </div>
-    </section>
+    <!-- Dark Overlay for readability -->
+    <div class="hero-overlay"></div>
 
-   <section class="mission-section">
-        <div class="mission-header">
-            <h2 class="mission-heading">Our Craft and Mission</h2>
-            <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto;">
-                We specialize in creating bespoke environments that stand the test of time, focusing on sustainable materials and structural honesty.
-            </p>
-        </div>
-        
-        <!-- The Project Grid -->
-        <div class="projects-grid" id="projectGrid">
-            <!-- First 4 projects hardcoded -->
-            <div class="project-card">
-                <div class="img-box">
-                  <img src="../assets/LL/ll.png"></div>
-                <div class="project-info">
-                  <h3>Loungevity Lounge</h3>
-                <i class="fa-solid fa-arrow-right"></i>
-                </div>
-                  <p>UI/UX DESIGN / AFTER EFFCTS / ADOBE ILLUSTRATOR / REACT</p>
-            </div>
-            <div class="project-card">
-                <div class="img-box"><img src="https://images.unsplash.com/photo-1600607687940-477000bab041?auto=format&fit=crop&w=800&q=80"></div>
-                <div class="project-info"><p>Workspace</p><h3>Void Office Hub</h3></div>
-            </div>
-            <div class="project-card">
-                <div class="img-box"><img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80"></div>
-                <div class="project-info"><p>Interior</p><h3>Sienna Loft</h3></div>
-            </div>
-            <div class="project-card">
-                <div class="img-box"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"></div>
-                <div class="project-info"><p>Commercial</p><h3>Obsidian Tower</h3></div>
-            </div>
-        </div>
+    <div class="hero-content">
+        <span class="subheading">Ourpjojects</span>
+        <h1 class="heading">Projects</h1>
+        <p class="paragraph">
+            We believe in the harmony of form and function. Our mission is to
+            bridge the gap between traditional craft and modern innovation,
+            creating spaces that inspire and endure.
+        </p>
+        <a href="tel:+919392525043" class="btn-contact">CONTACT US</a>
+    </div>
+</section>
 
-        <div class="controls">
-            <button class="btn-load" id="loadMoreBtn">LOAD MORE</button>
-        </div>
+<!-- Projects Section -->
+  <section class="mission-section">
+      <div class="mission-header">
+        <h2 class="mission-heading">Our Craft and Mission</h2>
+        <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto">
+          We specialize in creating bespoke environments that stand the test of
+          time, focusing on sustainable materials and structural honesty.
+        </p>
+      </div>
+
+      <!-- The Project Grid -->
+      <div class="projects-grid" id="projectGrid">
+        <!-- First 4 projects hardcoded -->
+        <!-- Changed div to a -->
+        <a class="project-card" href="./longevtiylounge.html">
+          <div class="img-box">
+            <img src="../assets/LL/ll.png" />
+          </div>
+          <div class="project-info">
+            <h3>Loungevity Lounge</h3>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <p>UI/UX DESIGN / AFTER EFFCTS / ADOBE ILLUSTRATOR / REACT</p>
+        </a>
+        <!-- Changed div to a -->
+        <a class="project-card" href="./nirmalahospitals.html">
+          <div class="img-box">
+            <img src="../assets/Nirmala Hospitals/Main page.png" />
+          </div>
+          <div class="project-info">
+            <h3>Nirmala Hospitals</h3>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <p>UI/UX DESIGN / Adobe PHOTOSHOP / HTML,CSS</p>
+        </a>
+        <a class="project-card" href="./omegahospitals.html">
+          <div class="img-box">
+            <img src="../assets/Omega Hospitals/Breats cancer.png" />
+          </div>
+          <div class="project-info">
+            <h3>Nirmala Hospitals</h3>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <p>
+            UI/UX DESIGN / Adobe ILLUSTRATOR / NEXT.JS / WONDERSHARE FILMORA
+          </p>
+        </a>
+
+        <a class="project-card" href="./alley-design.html">
+          <div class="img-box">
+            <img src="../assets/Alley Design/Alley Design.png" />
+          </div>
+          <div class="project-info">
+            <h3>Alley Design</h3>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <p>UI/UX DESIGN / Adobe PHOTOSHOP / HTML,CSS</p>
+        </a>
+      </div>
+      <div class="controls">
+        <button class="btn-load" id="loadMoreBtn">LOAD MORE</button>
+      </div>
     </section>
 
     <!-- Popup Modal -->
     <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-content">
-            <h2>Stay Tuned</h2>
-            <p>Our upcoming collection of architectural marvels is currently in development. More projects coming soon.</p>
-            <button class="close-modal" id="closeModal">CLOSE</button>
-        </div>
+      <div class="modal-content">
+        <h2>Stay Tuned</h2>
+        <p>
+          Our upcoming collection of architectural marvels is currently in
+          development. More projects coming soon.
+        </p>
+        <button class="close-modal" id="closeModal">CLOSE</button>
+      </div>
     </div>
 
 
-    
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="footer-container">
+        <p class="footer-tagline">
+          Is there a fascinating project brewing in your mind?
+        </p>
+        <div class="footer-nav-row">
+          <div class="footer-email">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:sandeepkaveti436@gmail.com"
+              >sandeepkaveti436@gmail.com</a
+            >
+          </div>
+          <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html">About</a>
+            <a href="../pages/project.html">Projects</a>
+          </div>
+        </div>
+        <hr class="footer-line" />
+        <div class="footer-brand-name">
+          <h1>SANDEEP KAVETI</h1>
+        </div>
+        <div class="footer-bottom-row">
+          <p>©2026 SANDEEPKAVETI. All rights reserved</p>
+          <div class="footer-scroll">
+            <a href="#" id="backToTop">SCROLL TOP ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-    
-    <script>
-      const projectGrid = document.getElementById('projectGrid');
-        const loadMoreBtn = document.getElementById('loadMoreBtn');
-        const modalOverlay = document.getElementById('modalOverlay');
-        const closeModal = document.getElementById('closeModal');
 
-        let currentProjectCount = 4;
-        const maxProjects = 24;
+    <!-- Scripts -->
+     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const observerOptions = {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+        rootMargin: "0px 0px -50px 0px" // Trigger slightly before it hits the bottom
+    };
 
-        // Sample project images to cycle through
-        const sampleImages = [
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&w=800&q=80"
-        ];
-
-        // --- Sparkle Animation Function ---
-        function createSparkles(x, y) {
-            for (let i = 0; i < 15; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.classList.add('sparkle');
-                document.body.appendChild(sparkle);
-
-                // Initial position
-                sparkle.style.left = `${x}px`;
-                sparkle.style.top = `${y}px`;
-
-                // Random direction and distance
-                const destX = (Math.random() - 0.5) * 200;
-                const destY = (Math.random() - 0.5) * 200;
-
-                const animation = sparkle.animate([
-                    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
-                    { transform: `translate(${destX}px, ${destY}px) scale(0)`, opacity: 0 }
-                ], {
-                    duration: 600 + Math.random() * 400,
-                    easing: 'cubic-bezier(0, .9, .57, 1)'
-                });
-
-                animation.onfinish = () => sparkle.remove();
+    const missionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // When scrolling DOWN into the element
+                entry.target.classList.add("active");
+            } else {
+                // When scrolling UP and the element leaves the view
+                // Remove this line if you only want the animation to happen once
+                entry.target.classList.remove("active");
             }
+        });
+    }, observerOptions);
+
+    const target = document.querySelector(".mission-header");
+    if (target) missionObserver.observe(target);
+});
+      const projectGrid = document.getElementById("projectGrid");
+      const loadMoreBtn = document.getElementById("loadMoreBtn");
+      const modalOverlay = document.getElementById("modalOverlay");
+      const closeModal = document.getElementById("closeModal");
+
+      let currentProjectCount = 4;
+      const maxProjects = 24;
+
+      // Sample project images to cycle through
+      const sampleImages = [
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&w=800&q=80",
+      ];
+
+      // --- Sparkle Animation Function ---
+      function createSparkles(x, y) {
+        for (let i = 0; i < 15; i++) {
+          const sparkle = document.createElement("div");
+          sparkle.classList.add("sparkle");
+          document.body.appendChild(sparkle);
+
+          // Initial position
+          sparkle.style.left = `${x}px`;
+          sparkle.style.top = `${y}px`;
+
+          // Random direction and distance
+          const destX = (Math.random() - 0.5) * 200;
+          const destY = (Math.random() - 0.5) * 200;
+
+          const animation = sparkle.animate(
+            [
+              { transform: "translate(0, 0) scale(1)", opacity: 1 },
+              {
+                transform: `translate(${destX}px, ${destY}px) scale(0)`,
+                opacity: 0,
+              },
+            ],
+            {
+              duration: 600 + Math.random() * 400,
+              easing: "cubic-bezier(0, .9, .57, 1)",
+            },
+          );
+
+          animation.onfinish = () => sparkle.remove();
+        }
+      }
+
+      // --- Load More Logic ---
+      loadMoreBtn.addEventListener("click", (e) => {
+        // Trigger sparkles at mouse click position
+        createSparkles(e.clientX, e.clientY);
+
+        if (currentProjectCount >= maxProjects) {
+          // Show Popup
+          modalOverlay.classList.add("active");
+          return;
         }
 
-        // --- Load More Logic ---
-        loadMoreBtn.addEventListener('click', (e) => {
-            // Trigger sparkles at mouse click position
-            createSparkles(e.clientX, e.clientY);
+        // Append 4 more projects
+        for (let i = 0; i < 4; i++) {
+          currentProjectCount++;
+          const imgUrl = sampleImages[i % sampleImages.length];
 
-            if (currentProjectCount >= maxProjects) {
-                // Show Popup
-                modalOverlay.classList.add('active');
-                return;
-            }
-
-            // Append 4 more projects
-            for (let i = 0; i < 4; i++) {
-                currentProjectCount++;
-                const imgUrl = sampleImages[i % sampleImages.length];
-                
-                const newProject = document.createElement('div');
-                newProject.classList.add('project-card');
-                newProject.innerHTML = `
+          const newProject = document.createElement("div");
+          newProject.classList.add("project-card");
+          newProject.innerHTML = `
                     <div class="img-box">
                         <img src="${imgUrl}">
                     </div>
@@ -276,16 +362,130 @@
                         <h3>Design Concept ${currentProjectCount}</h3>
                     </div>
                 `;
-                projectGrid.appendChild(newProject);
+          projectGrid.appendChild(newProject);
+        }
+      });
+
+      // Close Modal
+      closeModal.addEventListener("click", () => {
+        modalOverlay.classList.remove("active");
+      });
+
+      /**
+       * Toggles the contact options dropdown in the menu
+       */
+      function toggleContactOptions(e) {
+        e.preventDefault();
+        const options = document.getElementById("contactOptions");
+        if (options) options.classList.toggle("show"); // Changed to 'show' to match typical CSS naming
+      }
+
+      // --- 2. INITIALIZATION ---
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- 3. MENU LOGIC ---
+        const menuPage = document.getElementById("menuPage");
+        const openBtn = document.querySelector(".menu-icon"); // Selected via class based on your HTML
+        const closeBtn = document.getElementById("closeMenu");
+
+        if (openBtn && menuPage) {
+          openBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            menuPage.classList.add("active");
+          });
+        }
+
+        if (closeBtn && menuPage) {
+          closeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            menuPage.classList.remove("active");
+          });
+        }
+
+        // --- 4. TEXT ANIMATIONS (HERO & FOOTER) ---
+
+        /**
+         * Wraps characters in spans for staggered CSS animations
+         */
+        const wrapLetters = (node) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const fragment = document.createDocumentFragment();
+            [...node.textContent].forEach((char) => {
+              const span = document.createElement("span");
+              span.classList.add("letter");
+              span.innerHTML = char === " " ? "&nbsp;" : char;
+              fragment.appendChild(span);
+            });
+            node.parentNode.replaceChild(fragment, node);
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            Array.from(node.childNodes).forEach(wrapLetters);
+          }
+        };
+
+        // Initialize Hero Animation
+        const heroTitle = document.querySelector(".hero h1");
+        if (heroTitle) {
+          wrapLetters(heroTitle);
+          heroTitle.querySelectorAll(".letter").forEach((l, i) => {
+            l.style.setProperty("--index", i);
+          });
+        }
+
+        // Initialize Footer Animation
+        const footerBrand = document.querySelector(".footer-brand-name h1");
+        if (footerBrand) {
+          const text = footerBrand.textContent;
+          footerBrand.textContent = "";
+          [...text].forEach((char, i) => {
+            const span = document.createElement("span");
+            span.innerHTML = char === " " ? "&nbsp;" : char;
+            span.style.setProperty("--index", i);
+            footerBrand.appendChild(span);
+          });
+        }
+
+        // --- 5. SCROLL INTERSECTION OBSERVER ---
+
+        const revealCallback = (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              // Optional: stop observing once shown
+              // revealObserver.unobserve(entry.target);
             }
+          });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+          threshold: 0.15,
+          rootMargin: "0px 0px -50px 0px", // Triggers slightly before the element enters
         });
 
-        // Close Modal
-        closeModal.addEventListener('click', () => {
-            modalOverlay.classList.remove('active');
-        });
+        document
+          .querySelectorAll(".reveal, .reveal-stagger, .footer-brand-name")
+          .forEach((el) => {
+            revealObserver.observe(el);
+          });
 
-      
+        // --- 6. BACK TO TOP ---
+        const backToTopBtn = document.getElementById("backToTop");
+        if (backToTopBtn) {
+          backToTopBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+      });
+
+      function setInterest(element, value) {
+        const buttons = element.parentElement.querySelectorAll(".toggle-btn");
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        element.classList.add("active");
+
+        const input = document.getElementById("interest-input");
+        if (input) input.value = value;
+      }
+
       /**
        * Toggles the contact options dropdown in the menu
        */

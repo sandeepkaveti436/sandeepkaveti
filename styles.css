@@ -78,8 +78,31 @@ nav {
   align-items: center;
   z-index: 100;
   animation: slideDown 1s ease forwards;
+  gap: 10px;
 }
 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  nav {
+    width: 90%;          /* Increase width to give links room */
+    top: 20px;           /* Bring it closer to the top to save space */
+    padding: 10px 20px;  /* Slightly tighter padding */
+    border-radius: 50px; /* Keep the rounded look */
+  }
+
+  /* Optional: If you have a logo and links, you might want to adjust them here */
+  nav a {
+    font-size: 14px;     /* Smaller font for mobile */
+  }
+}
+
+/* Extra small devices (Phones) */
+@media (max-width: 480px) {
+  nav {
+    width: 95%;          /* Almost full width but still floating */
+    padding: 8px 15px;
+  }
+}
 .logo {
   display: flex;
   align-items: center;
@@ -410,13 +433,13 @@ nav {
   margin-bottom: 40px;
 }
 
-.bottom-img-container img {
+/* .bottom-img-container img {
   width: 100%;
   border-radius: 2px;
   display: block;
   height: 60vh;
-  background-size: contain;
-}
+  background-size: cover;
+} */
 
 /* Mobile Adjustments */
 @media (max-width: 1024px) {
@@ -1235,7 +1258,7 @@ nav {
 .center-img-container img,
 .bottom-img-container img {
   width: 100%;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -1702,5 +1725,30 @@ nav {
 @media (max-width: 768px) {
   .project-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Responsive for .menu-footer */
+@media (max-width: 1024px) {
+  .menu-footer {
+    flex-direction: column;     /* Stack items vertically */
+    align-items: center;        /* Center align all items */
+    justify-content: center;    /* Center vertically if needed */
+    text-align: center;         /* Center text */
+    padding-top: 20px;          /* Reduce top padding on smaller screens */
+    margin-bottom: 20px;        /* Keep spacing consistent */
+    gap: 20px;                  /* Space between stacked items */
+  }
+}
+.menu-footer a {
+  display: inline-block;
+  margin: 5px 10px;
+  word-break: break-word;  /* Prevent overflow on small screens */
+}
+
+@media (max-width: 480px) {
+  .menu-footer {
+    padding-top: 15px;
+    gap: 15px;
   }
 }

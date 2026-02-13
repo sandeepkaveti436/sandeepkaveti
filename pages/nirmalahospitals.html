@@ -3,20 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nirmala Hospitals</title>
-    <link rel="stylesheet" href="../styles.css" />
-    <link rel="stylesheet" href="../pages/nirmalahospitalsstyle.css" />
+    <title>Sandeep - Portfolio Landing Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./nirmalahospitalsstyle.css" />
   </head>
-  <body class="dark-theme">
-    <!-- Navigation -->
+  <body>
+    
+    <!-- Navbar -->
     <nav>
       <div class="logo">
         <div class="logo-icon">
@@ -28,26 +31,112 @@
         </div>
         SANDEEP
       </div>
-
       <div class="nav-links">
         <a href="../index.html">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="services.html">Services</a>
+        <a href="./project.html">Projects</a>
+        <a href="./services.html">Services</a>
       </div>
-
       <div class="nav-right">
-        <a href="../index.html#contact" class="lets-talk-nav">Lets talk ↗</a>
-        <div class="menu-icon"></div>
+        <a href="tel:+919392525043" class="lets-talk-nav">Lets talk ↗</a>
+        <a href="javascript:void(0)" class="menu-icon" id="openMenu"> </a>
       </div>
     </nav>
- <div class="detail-container">
-        <header class="detail-header">
-            <h1 class="mega-title">Nirmala Hospitals</h1>
+
+    <div class="menu-overlay" id="menuPage">
+      <div class="menu-header">
+        <a href="../index.html" class="logo">
+          <div class="logo-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="black">
+              <path
+                d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+              />
+            </svg>
+          </div>
+          SANDEEP
+        </a>
+        <div class="menu-controls">
+          <a href="tel:+919392525043" class="menu-talk-btn">Lets Talk</a>
+          <a href="javascript:void(0)" class="menu-close" id="closeMenu">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="menu-main">
+        <div class="inner-nav" style="width: 100%">
+          <div class="menu-item">
+            <a href="../index.html">
+              <span class="m-text">Home</span>
+              <span class="m-num">(01)</span>
+            </a>
+            <div class="m-arrow">→</div>
+          </div>
+          <div class="menu-item">
+            <a href="../index.html">
+              <span class="m-text">About Me</span>
+              <span class="m-num">(02)</span>
+            </a>
+            <div class="m-arrow">→</div>
+          </div>
+          <div class="menu-item">
+            <a href="./pages/project.html">
+              <span class="m-text">Works</span>
+              <span class="m-num">(03)</span>
+            </a>
+            <div class="m-arrow">→</div>
+          </div>
+          <div class="contact-wrapper">
+            <a href="javascript:void(0)" onclick="toggleContactOptions(event)">
+              <span class="m-text">Contact</span>
+              <span class="m-num">(04)</span>
+            </a>
+            <div class="contact-options" id="contactOptions">
+              <a href="tel:+919392525043">📞 Call</a>
+              <a href="https://wa.me/919392525043" target="_blank"
+                >💬 WhatsApp</a
+              >
+              <a href="mailto:sandeepkaveti436@gmail.com">📧 Mail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-footer">
+        <div>
+          <p class="m-label">Follow me</p>
+          <div class="m-socials">
+            <a
+              href="https://www.instagram.com/sandeepkaveti436/"
+              target="_blank"
+              >INSTAGRAM ↗</a
+            >
+            <a href="https://www.behance.net/" target="_blank">BEHANCE ↗</a>
+            <a href="https://dribbble.com/sandeepkaveti" target="_blank"
+              >DRIBBLE ↗</a
+            >
+            <a href="https://www.linkedin.com/in/sandeepsandy" target="_blank"
+              >LINKEDIN ↗</a
+            >
+          </div>
+        </div>
+        <div>
+          <p class="m-label">Stay connected</p>
+          <div class="m-email-box">
+            <input type="email" placeholder="Enter your email" />
+            <span>↗</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-container">
+      <header class="detail-header">
+        <h1 class="mega-title">Nirmala Hospitals Lounge</h1>
         <div class="tag-group">
           <span class="tag">UI/UX</span>
           <span class="tag">DEVELOPMENT</span>
-          
-           <a
+
+          <a
             href="https://www.nirmalahospital.co.in/"
             class="view-btn"
             target="_blank"
@@ -59,20 +148,18 @@
       </header>
 
       <div class="hero-image-wrapper">
-        <img src="../assets/Nirmala Hospitals/Main page.png" alt="Nirmala Hospitals" />
+        <img
+          src="../assets/Nirmala Hospitals/Main page.png"
+          alt="Nirmala Hospitals "
+        />
       </div>
     </div>
     <div class="header">
       <h2>Project overview</h2>
       <p>
-        Nirmala Hospitals is a healthcare platform designed to provide seamless
-        patient care and efficient hospital management. It offers a comprehensive
-        suite of services including appointment booking, medical records management,
-        teleconsultation, and real-time health monitoring. The platform aims to
-        enhance the patient experience while streamlining administrative tasks for
-        healthcare providers.
-        recommendations, and access to a vibrant community of like-minded
-        individuals passionate about longevity.
+        Nirmala Hospitals is a cutting-edge platform dedicated to promoting healthy aging and longevity. It offers a comprehensive range of
+        resources, tools, and community support to help individuals optimize their healthspan and live longer, healthier lives. The platform provides
+        personalized health assessments, evidence-based lifestyle recommendations, and access to a vibrant community of like-minded individuals passionate about longevity.
       </p>
     </div>
     <div class="project-meta">
@@ -156,121 +243,333 @@
       </div>
     </section>
 
-    <section class="showreel-section reveal-section" id="showreel">
-      <!-- The Background Visual -->
-      <div class="showreel-bg">
-        <img
-          src="YOUR_IMAGE_PATH.jpg"
-          alt="Cosmic Background"
-          class="bg-visual"
+    <div class="video-container">
+      <video autoplay muted loop playsinline class="main-video">
+        <source
+          src="../assets/Video/1.mp4"
+          type="video/mp4"
         />
-        <div class="showreel-overlay"></div>
-      </div>
-
-      <!-- The Play Button & Text -->
-      <div class="showreel-content">
-        <p class="showreel-tag">MOTION / 3D / DESIGN</p>
-        <h2 class="showreel-title">WATCH SHOWREEL</h2>
-
-        <div class="play-btn-wrap">
-          <button class="play-btn">
-            <i class="fa-solid fa-play"></i>
-            <span class="btn-ripple"></span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="responsive-gallery-section">
-      <div class="gallery-header">
-        <h2 class="gallery-title">Responsive</h2>
-        <div class="gallery-nav">
-          <button class="nav-circle-btn prev">
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button class="nav-circle-btn next">
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-
-      <div class="gallery-scroll-container">
-        <!-- Card 1 -->
-        <div class="mobile-card">
-          <img src="path-to-your-mobile-screenshot1.jpg" alt="Screen 1" />
-        </div>
-        <!-- Card 2 -->
-        <div class="mobile-card">
-          <img src="path-to-your-mobile-screenshot2.jpg" alt="Screen 2" />
-        </div>
-        <!-- Card 3 -->
-        <div class="mobile-card">
-          <img src="path-to-your-mobile-screenshot3.jpg" alt="Screen 3" />
-        </div>
-        <!-- Card 4 -->
-        <div class="mobile-card">
-          <img src="path-to-your-mobile-screenshot4.jpg" alt="Screen 4" />
-        </div>
-        <!-- Card 5 -->
-        <div class="mobile-card">
-          <img src="path-to-your-mobile-screenshot5.jpg" alt="Screen 5" />
-        </div>
-        <!-- Card 6 -->
-        <div class="mobile-card">
-          <img src="path-to-your-mobile-screenshot6.jpg" alt="Screen 6" />
-        </div>
-      </div>
-    </section>
-    
-  <section class="tech-section reveal-section" id="tech">
-    <div class="container">
-        <h2 class="tech-title">Tech</h2>
-        
-        <div class="tech-stack">
-   
-            <!-- Figma -->
-            <div class="tech-item">
-                <div class="tech-box">
-                    <img src="../assets/Tech icons/images.png" alt="Figma">
-                </div>
-            </div>
-
-            <!-- Adobe Illustrator -->
-            <div class="tech-item">
-                <div class="tech-box">
-                    <img src="../assets/Tech icons/Adobe_Illustrator_CC_icon.svg.png" alt="Illustrator">
-                </div>
-            </div>
-
-            <!-- Adobe After Effects -->
-            <div class="tech-item">
-                <div class="tech-box">
-                    <img src="../assets/Tech icons/Adobe_After_Effects_CC_icon.svg.png" alt="After Effects">
-                </div>
-            </div>
-        </div>
+        Your browser does not support the video tag.
+      </video>
     </div>
+
+  <section class="responsive-gallery-section">
+  <div class="gallery-header">
+    <h2 class="gallery-title">Responsive</h2>
+    <!-- Arrows are here -->
+    <div class="gallery-nav">
+      <button class="nav-circle-btn prev" id="prevBtn">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <button class="nav-circle-btn next" id="nextBtn">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="gallery-scroll-container" id="galleryContainer">
+    <!-- Card 1 to 10 -->
+    <div class="mobile-card"><img src="../assets/LL/1.png" alt="1"></div>
+    <div class="mobile-card"><img src="../assets/LL/2.png" alt="2"></div>
+    <div class="mobile-card"><img src="../assets/LL/3.png" alt="3"></div>
+    <div class="mobile-card"><img src="../assets/LL/4.png" alt="4"></div>
+    <div class="mobile-card"><img src="../assets/LL/5.png" alt="5"></div>
+    <div class="mobile-card"><img src="../assets/LL/7.png" alt="6"></div>
+    <div class="mobile-card"><img src="../assets/LL/8.png" alt="7"></div>
+    <div class="mobile-card"><img src="../assets/LL/9.png" alt="8"></div>
+    <div class="mobile-card"><img src="../assets/LL/10.png" alt="9"></div>
+    <div class="mobile-card"><img src="../assets/LL/10.png" alt="10"></div>
+  </div>
 </section>
 
-<div class="nav-split-container">
-    <!-- Previous Button -->
-    <a href="../pages/longevtiylounge.html" class="nav-block prev">
+    <div class="nav-split-container">
+      <!-- Previous Button -->
+      <a href="../pages/longevtiylounge.html" class="nav-block prev">
         <div class="nav-inner">
-            <span class="nav-label"><i class="fa-solid fa-arrow-left"></i> Previous</span>
-            <h2 class="nav-name">Longevity Lounge</h2>
+          <span class="nav-label"
+            ><i class="fa-solid fa-arrow-left"></i> Previous</span
+          >
+          <h2 class="nav-name">Longevity Lounge</h2>
         </div>
-    </a>
+      </a>
 
-    <!-- Next Button -->
-    <a href="../pages/omegahospitals.html" class="nav-block next">
+      <!-- Next Button -->
+      <a href="../pages/omegahospitals.html" class="nav-block next">
         <div class="nav-inner">
-            <span class="nav-label">Next Project <span class="diamond-teal"></span></span>
-            <h2 class="nav-name">Omega Hospitals</h2>
+          <span class="nav-label"
+            >Next Project <span class="diamond-teal"></span
+          ></span>
+          <h2 class="nav-name">Omega Hospitals</h2>
         </div>
-    </a>
-</div>
+      </a>
+    </div>
+
+      <!-- Footer -->
+    <footer class="footer-section">
+      <div class="footer-container">
+        <p class="footer-tagline">
+          Is there a fascinating project brewing in your mind?
+        </p>
+        <div class="footer-nav-row">
+          <div class="footer-email">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:sandeepkaveti436@gmail.com"
+              >sandeepkaveti436@gmail.com</a
+            >
+          </div>
+          <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html">About</a>
+            <a href="../pages/project.html">Projects</a>
+          </div>
+        </div>
+        <hr class="footer-line" />
+        <div class="footer-brand-name">
+          <h1>SANDEEP KAVETI</h1>
+        </div>
+        <div class="footer-bottom-row">
+          <p>©2026 SANDEEPKAVETI. All rights reserved</p>
+          <div class="footer-scroll">
+            <a href="#" id="backToTop">SCROLL TOP ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
 
     <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('galleryContainer');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+
+    // Function to scroll one-by-one
+    nextBtn.addEventListener('click', () => {
+        // On mobile, container.clientWidth is 100% of the screen
+        const scrollAmount = container.clientWidth; 
+        container.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+
+    prevBtn.addEventListener('click', () => {
+        const scrollAmount = container.clientWidth;
+        container.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+});
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- 3. MENU LOGIC ---
+        const menuPage = document.getElementById("menuPage");
+        const openBtn = document.querySelector(".menu-icon"); // Selected via class based on your HTML
+        const closeBtn = document.getElementById("closeMenu");
+
+        if (openBtn && menuPage) {
+          openBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            menuPage.classList.add("active");
+          });
+        }
+
+        if (closeBtn && menuPage) {
+          closeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            menuPage.classList.remove("active");
+          });
+        }
+
+        // --- 4. TEXT ANIMATIONS (HERO & FOOTER) ---
+
+        /**
+         * Wraps characters in spans for staggered CSS animations
+         */
+        const wrapLetters = (node) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const fragment = document.createDocumentFragment();
+            [...node.textContent].forEach((char) => {
+              const span = document.createElement("span");
+              span.classList.add("letter");
+              span.innerHTML = char === " " ? "&nbsp;" : char;
+              fragment.appendChild(span);
+            });
+            node.parentNode.replaceChild(fragment, node);
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            Array.from(node.childNodes).forEach(wrapLetters);
+          }
+        };
+
+        // Initialize Hero Animation
+        const heroTitle = document.querySelector(".hero h1");
+        if (heroTitle) {
+          wrapLetters(heroTitle);
+          heroTitle.querySelectorAll(".letter").forEach((l, i) => {
+            l.style.setProperty("--index", i);
+          });
+        }
+
+        // Initialize Footer Animation
+        const footerBrand = document.querySelector(".footer-brand-name h1");
+        if (footerBrand) {
+          const text = footerBrand.textContent;
+          footerBrand.textContent = "";
+          [...text].forEach((char, i) => {
+            const span = document.createElement("span");
+            span.innerHTML = char === " " ? "&nbsp;" : char;
+            span.style.setProperty("--index", i);
+            footerBrand.appendChild(span);
+          });
+        }
+
+        // --- 5. SCROLL INTERSECTION OBSERVER ---
+
+        const revealCallback = (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              // Optional: stop observing once shown
+              // revealObserver.unobserve(entry.target);
+            }
+          });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+          threshold: 0.15,
+          rootMargin: "0px 0px -50px 0px", // Triggers slightly before the element enters
+        });
+
+        document
+          .querySelectorAll(".reveal, .reveal-stagger, .footer-brand-name")
+          .forEach((el) => {
+            revealObserver.observe(el);
+          });
+
+        // --- 6. BACK TO TOP ---
+        const backToTopBtn = document.getElementById("backToTop");
+        if (backToTopBtn) {
+          backToTopBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+      });
+
+      function setInterest(element, value) {
+        const buttons = element.parentElement.querySelectorAll(".toggle-btn");
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        element.classList.add("active");
+
+        const input = document.getElementById("interest-input");
+        if (input) input.value = value;
+      }
+
+      /**
+       * Toggles the contact options dropdown in the menu
+       */
+      function toggleContactOptions(e) {
+        e.preventDefault();
+        const options = document.getElementById("contactOptions");
+        if (options) options.classList.toggle("show"); // Changed to 'show' to match typical CSS naming
+      }
+
+      // --- 2. INITIALIZATION ---
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- 3. MENU LOGIC ---
+        const menuPage = document.getElementById("menuPage");
+        const openBtn = document.querySelector(".menu-icon"); // Selected via class based on your HTML
+        const closeBtn = document.getElementById("closeMenu");
+
+        if (openBtn && menuPage) {
+          openBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            menuPage.classList.add("active");
+          });
+        }
+
+        if (closeBtn && menuPage) {
+          closeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            menuPage.classList.remove("active");
+          });
+        }
+
+        // --- 4. TEXT ANIMATIONS (HERO & FOOTER) ---
+
+        /**
+         * Wraps characters in spans for staggered CSS animations
+         */
+        const wrapLetters = (node) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const fragment = document.createDocumentFragment();
+            [...node.textContent].forEach((char) => {
+              const span = document.createElement("span");
+              span.classList.add("letter");
+              span.innerHTML = char === " " ? "&nbsp;" : char;
+              fragment.appendChild(span);
+            });
+            node.parentNode.replaceChild(fragment, node);
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            Array.from(node.childNodes).forEach(wrapLetters);
+          }
+        };
+
+        // Initialize Hero Animation
+        const heroTitle = document.querySelector(".hero h1");
+        if (heroTitle) {
+          wrapLetters(heroTitle);
+          heroTitle.querySelectorAll(".letter").forEach((l, i) => {
+            l.style.setProperty("--index", i);
+          });
+        }
+
+        // Initialize Footer Animation
+        const footerBrand = document.querySelector(".footer-brand-name h1");
+        if (footerBrand) {
+          const text = footerBrand.textContent;
+          footerBrand.textContent = "";
+          [...text].forEach((char, i) => {
+            const span = document.createElement("span");
+            span.innerHTML = char === " " ? "&nbsp;" : char;
+            span.style.setProperty("--index", i);
+            footerBrand.appendChild(span);
+          });
+        }
+
+        // --- 5. SCROLL INTERSECTION OBSERVER ---
+
+        const revealCallback = (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              // Optional: stop observing once shown
+              // revealObserver.unobserve(entry.target);
+            }
+          });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+          threshold: 0.15,
+          rootMargin: "0px 0px -50px 0px", // Triggers slightly before the element enters
+        });
+
+        document
+          .querySelectorAll(".reveal, .reveal-stagger, .footer-brand-name")
+          .forEach((el) => {
+            revealObserver.observe(el);
+          });
+
+        // --- 6. BACK TO TOP ---
+        const backToTopBtn = document.getElementById("backToTop");
+        if (backToTopBtn) {
+          backToTopBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+      });
       (function () {
         const container = document.querySelector(".gallery-scroll-container");
         const prevBtn = document.querySelector(".nav-circle-btn.prev");
@@ -308,31 +607,28 @@
         updateNav();
       })();
 
-      window.addEventListener('scroll', () => {
-    const section = document.querySelector('.next-project-section');
-    const fill = document.querySelector('.progress-line-fill');
-    
-    // Calculate how much of the section is visible
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    const scrollPos = window.scrollY + window.innerHeight;
-    
-    if (scrollPos > sectionTop) {
-        // Calculate percentage (0 to 100)
-        let percentage = ((scrollPos - sectionTop) / sectionHeight) * 100;
-        percentage = Math.min(Math.max(percentage, 0), 100); // Clamp between 0-100
-        
-        fill.style.width = percentage + '%';
-        
-        // Optional: Redirect to next page when line is full
-        if (percentage >= 100) {
+      window.addEventListener("scroll", () => {
+        const section = document.querySelector(".next-project-section");
+        const fill = document.querySelector(".progress-line-fill");
+
+        // Calculate how much of the section is visible
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const scrollPos = window.scrollY + window.innerHeight;
+
+        if (scrollPos > sectionTop) {
+          // Calculate percentage (0 to 100)
+          let percentage = ((scrollPos - sectionTop) / sectionHeight) * 100;
+          percentage = Math.min(Math.max(percentage, 0), 100); // Clamp between 0-100
+
+          fill.style.width = percentage + "%";
+
+          // Optional: Redirect to next page when line is full
+          if (percentage >= 100) {
             // window.location.href = "next-project-link.html";
+          }
         }
-    }
-});
+      });
     </script>
   </body>
-</html>
-
-</body>
 </html>
