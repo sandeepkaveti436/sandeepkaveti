@@ -228,6 +228,62 @@
       </div>
     </div>
 
+<!-- connect with us -->
+<section class="contact-hero">
+    <div class="contact-overlay">
+        <!-- Left Side: Branding -->
+        <div class="brand-side">
+            <h1 class="brand-title">
+                <span class="slow-up">We can turn your</span><br>
+                <span class="slow-up">dream project into</span> 
+                <i class="slow-up">reality</i>
+            </h1>
+        </div>
+
+        <!-- Right Side: The Form Card -->
+        <div class="form-card slow-up">
+            <div class="card-header">
+                <h2 class="slow-up">Let's talk! 👋</h2>
+                <div class="contact-info-row">
+                    <div class="mail-box slow-up">
+                        <span>Mail us at</span>
+                        <a href="mailto:hello@pixelperfect.com">hello@pixelperfect.com</a>
+                    </div>
+                    <!-- Social Icons Staggered -->
+                    <div class="social-links">
+                        <a href="#" class="slow-up-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="slow-up-icon"><i class="fa-brands fa-dribbble"></i></a>
+                        <a href="#" class="slow-up-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="slow-up-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider slow-up">OR</div>
+
+            <form class="contact-form">
+                <p class="form-label slow-up">Leave us a brief message</p>
+                <div class="input-row">
+                    <div class="slow-up" style="width: 100%"><input type="text" placeholder="Your name"></div>
+                    <div class="slow-up" style="width: 100%"><input type="email" placeholder="Email"></div>
+                </div>
+                <div class="slow-up"><textarea placeholder="Briefly describe your project idea..."></textarea></div>
+
+                <p class="form-label slow-up">I'm looking for...</p>
+                <div class="chip-group">
+                    <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'Website')">Website</button>
+                    <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'Mobile App')">Mobile App</button>
+                    <button type="button" class="toggle-btn slow-up active" onclick="setInterest(this, 'Web App')">Web App</button>
+                    <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'E-Commerce')">E-Commerce</button>
+                    <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'Brand Identity')">Brand Identity</button>
+                    <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'Other')">Other</button>
+                </div>
+
+                <button type="submit" class="send-btn slow-up">Send a message</button>
+            </form>
+        </div>
+    </div>
+</section>    
 
     <!-- Footer -->
     <footer class="footer-section">
@@ -264,6 +320,42 @@
 
     <!-- Scripts -->
      <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    // 1. Setup Staggered Delays for Items in Groups
+    const staggerGroups = [
+        ".social-links a",
+        ".chip-group .toggle-btn",
+        ".brand-title span, .brand-title i"
+    ];
+
+    staggerGroups.forEach(selector => {
+        const items = document.querySelectorAll(selector);
+        items.forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.1}s`;
+        });
+    });
+
+    // 2. Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+            }
+        });
+    }, { threshold: 0.1 });
+
+    // Target all animatable items
+    document.querySelectorAll(".slow-up, .slow-up-icon").forEach((el) => {
+        observer.observe(el);
+    });
+});
+
+function setInterest(element, value) {
+    const buttons = element.parentElement.querySelectorAll('.toggle-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    element.classList.add('active');
+}
+
       document.addEventListener("DOMContentLoaded", () => {
     const observerOptions = {
         threshold: 0.1, // Trigger when 10% of the element is visible

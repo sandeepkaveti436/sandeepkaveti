@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600&family=Inter:wght@400;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap');
 
 :root {
   --bg: #050505;
@@ -9,6 +10,10 @@
   --glass: rgba(255, 255, 255, 0.05);
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.1);
+    --card-radius: 40px;
+    --primary-black: #0a0a0a;
+    --text-gray: #666;
+    --border-light: #e0e0e0;
 }
 
 * {
@@ -1202,4 +1207,145 @@ nav {
     margin-bottom: 20px;
     
   }
+}
+
+/* Connect with us */
+.contact-hero {
+    min-height: 100vh;
+    width: 100%;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 5%;
+}
+
+.contact-overlay {
+    width: 100%;
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: 1fr 550px;
+    gap: 40px;
+    align-items: flex-end;
+}
+
+/* --- Left Side --- */
+.brand-side {
+    padding-bottom: 60px;
+}
+
+.brand-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: white;
+    line-height: 1.1;
+    font-weight: 700;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.brand-title i {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* --- Form Card --- */
+.form-card {
+    background: white;
+    border-radius: var(--card-radius);
+    padding: 50px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.2);
+}
+
+.card-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #009ca8;
+}
+
+.contact-info-row {
+    background: #f8f9fb;
+    padding: 15px 25px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.mail-box span { display: block; font-size: 0.75rem; color: var(--text-gray); }
+.mail-box a { color: #009ca8; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+
+.social-links { display: flex; gap: 12px; }
+.social-links a {
+    width: 35px; height: 35px; background: #eef2f6; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: #009ca8; text-decoration: none; transition: 0.3s;
+}
+.social-links a:hover { background: #009ca8; color: white; }
+
+.divider {
+    text-align: center;
+    position: relative;
+    margin: 30px 0;
+    font-size: 0.7rem;
+    color: #ccc;
+    font-weight: 700;
+}
+.divider::before, .divider::after {
+    content: ""; position: absolute; top: 50%; width: 45%; height: 1px; background: #eee;
+}
+.divider::before { left: 0; } .divider::after { right: 0; }
+
+/* --- Form Elements --- */
+.form-label { font-size: 0.9rem; font-weight: 700; margin-bottom: 15px; display: block; }
+
+.input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+
+input, textarea {
+    width: 100%; padding: 16px; border: 1px solid var(--border-light);
+    border-radius: 12px; font-size: 0.95rem; outline: none; transition: 0.3s;
+}
+input:focus, textarea:focus { border-color: #009ca8; }
+textarea { height: 120px; resize: none; margin-bottom: 25px; }
+
+.chip-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 35px; }
+
+.toggle-btn {
+    padding: 10px 20px; border-radius: 10px; border: 1px solid var(--border-light);
+    background: white; font-size: 0.85rem; cursor: pointer; transition: 0.3s;
+}
+.toggle-btn.active { background: #009ca8; color: white; border-color: #009ca8; }
+
+.send-btn {
+    width: 100%; background: var(--blue); color: white;
+    padding: 20px; border: none; border-radius: 18px; font-weight: 700;
+    cursor: pointer; transition: 0.3s;
+}
+.send-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+/* --- INDIVIDUAL SLOW-UP BLUR ANIMATION --- */
+.slow-up {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(30px);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slow-up.is-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .contact-overlay { grid-template-columns: 1fr; }
+    .brand-side { text-align: center; }
+}
+
+@media (max-width: 600px) {
+    .form-card { padding: 30px 20px; border-radius: 30px; }
+    .input-row { grid-template-columns: 1fr; }
+    .contact-info-row { flex-direction: column; gap: 15px; text-align: center; }
 }
