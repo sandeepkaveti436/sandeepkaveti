@@ -382,6 +382,12 @@ nav,
 
 .hero h1 span {
   font-weight: 500;
+  
+}
+.special{
+  font-weight: 500;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
 }
 
 /* The Letter Styling */
