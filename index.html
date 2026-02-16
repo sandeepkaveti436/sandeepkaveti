@@ -487,7 +487,7 @@
               <div class="mail-box slow-up">
                 <span>Mail us at</span>
                 <a href="mailto:hello@pixelperfect.com"
-                  >hello@pixelperfect.com</a
+                  >sandeepkaveti436@gmail.com</a
                 >
               </div>
               <!-- Social Icons Staggered -->
@@ -510,73 +510,43 @@
 
           <div class="divider slow-up">OR</div>
 
-          <form class="contact-form">
-            <p class="form-label slow-up">Leave us a brief message</p>
-            <div class="input-row">
-              <div class="slow-up" style="width: 100%">
-                <input type="text" placeholder="Your name" />
-              </div>
-              <div class="slow-up" style="width: 100%">
-                <input type="email" placeholder="Email" />
-              </div>
-            </div>
-            <div class="slow-up">
-              <textarea
-                placeholder="Briefly describe your project idea..."
-              ></textarea>
-            </div>
+          <!-- IMPORTANT: Replace 'YOUR_FORMSPREE_ID' with the ID you get from formspree.io -->
+<form id="contact-form" action="https://formspree.io/f/mdalzaya" method="POST" class="contact-form">
+    <p class="form-label slow-up">Leave us a brief message</p>
+    <div class="input-row">
+        <div class="slow-up" style="width: 100%">
+            <input type="text" name="visitor_name" placeholder="Your name" required />
+        </div>
+        <div class="slow-up" style="width: 100%">
+            <input type="contact" name="visitor_contact" placeholder="Contact" required />
+        </div>
+        
+    </div>
+    <div class="slow-up">
+        <textarea name="visitor_message" placeholder="Briefly describe your project idea..." required></textarea>
+    </div>
 
-            <p class="form-label slow-up">I'm looking for...</p>
-            <div class="chip-group">
-              
-              <button
-                type="button"
-                class="toggle-btn slow-up"
-                onclick="setInterest(this, 'Website')"
-              >
-                Website
-              </button>
-              <button
-                type="button"
-                class="toggle-btn slow-up"
-                onclick="setInterest(this, 'Mobile App')"
-              >
-                Mobile App
-              </button>
-              <button
-                type="button"
-                class="toggle-btn slow-up active"
-                onclick="setInterest(this, 'Web App')"
-              >
-                Web App
-              </button>
-              <button
-                type="button"
-                class="toggle-btn slow-up"
-                onclick="setInterest(this, 'E-Commerce')"
-              >
-                E-Commerce
-              </button>
-              <button
-                type="button"
-                class="toggle-btn slow-up"
-                onclick="setInterest(this, 'Brand Identity')"
-              >
-                Brand Identity
-              </button>
-              <button
-                type="button"
-                class="toggle-btn slow-up"
-                onclick="setInterest(this, 'Other')"
-              >
-                Other
-              </button>
-            </div>
+    <p class="form-label slow-up">I'm looking for...</p>
+    
+    <!-- This captures the Chip selection -->
+    <input type="hidden" id="interest-input" name="project_category" value="Web App" />
 
-            <button type="submit" class="send-btn slow-up">
-              Send a message
-            </button>
-          </form>
+    <div class="chip-group">
+        <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'Website')">Website</button>
+        <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'Mobile App')">Mobile App</button>
+        <button type="button" class="toggle-btn slow-up active" onclick="setInterest(this, 'Web App')">Web App</button>
+        <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'E-Commerce')">E-Commerce</button>
+        <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'Brand Identity')">Brand Identity</button>
+        <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'Other')">Other</button>
+    </div>
+
+    <button type="submit" id="submit-btn" class="send-btn slow-up">
+        Send a message
+    </button>
+    
+    <!-- This is where the Success/Error message will show -->
+    <p id="form-status" style="margin-top: 20px; text-align: center; font-weight: 500;"></p>
+</form>
         </div>
       </div>
     </section>
@@ -833,6 +803,53 @@
         const options = document.getElementById("contactOptions");
         if (options) options.classList.toggle("show"); // Changed to 'show' to match typical CSS naming
       }
+      // 1. Logic for Chip Selection
+function setInterest(btn, value) {
+    const parent = btn.parentElement;
+    parent.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    // This updates the hidden input so the category is sent in the email
+    document.getElementById('interest-input').value = value;
+}
+
+// 2. Logic for Form Submission (Sending to your Mail)
+const contactForm = document.getElementById("contact-form");
+
+async function handleSubmit(event) {
+    event.preventDefault();
+    const status = document.getElementById("form-status");
+    const submitBtn = document.getElementById("submit-btn");
+    const data = new FormData(event.target);
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending...";
+
+    fetch(event.target.action, {
+        method: contactForm.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            status.innerHTML = "Success! I have received your message. ✨";
+            status.style.color = "#009ca8";
+            contactForm.reset(); // Clears the form
+            submitBtn.innerText = "Send a message";
+            submitBtn.disabled = false;
+        } else {
+            status.innerHTML = "Oops! There was a problem. Please try again.";
+            status.style.color = "red";
+            submitBtn.disabled = false;
+        }
+    }).catch(error => {
+        status.innerHTML = "Error connecting to server. Check your internet.";
+        status.style.color = "red";
+        submitBtn.disabled = false;
+    });
+}
+
+contactForm.addEventListener("submit", handleSubmit);
 
       // --- 2. INITIALIZATION ---
 
