@@ -105,7 +105,7 @@ nav {
 }
 
 .nav-links a:hover {
-  color: #009ca8;
+  color: #ff8c00;
   font-weight: 600;
 }
 
@@ -814,6 +814,7 @@ nav {
   max-width: 1400px;
   margin: 0 auto 80px;
   padding: 0 5%;
+  color: #ff8c00;
 }
 
 .header h1,
@@ -821,6 +822,7 @@ nav {
   font-size: clamp(2rem, 8vw, 3.5rem);
   font-weight: 700;
   margin-bottom: 30px;
+  
 }
 .header p {
   font-size: 1.1rem;
@@ -844,7 +846,7 @@ nav {
 }
 
 .project-meta div strong {
-  color: var(--accent-orange);
+  color: #ff8c00;
   font-weight: 600;
   margin-right: 8px;
 }
@@ -857,6 +859,7 @@ nav {
   gap: 60px;
   margin-bottom: 80px;
   flex-wrap: wrap;
+  
 }
 
 date,
@@ -898,6 +901,7 @@ location::before {
   margin-bottom: 80px;
   text-align: center;
   line-height: 1.2;
+  color: #ff8c00;
 }
 
 .process-main-title span {
@@ -910,6 +914,7 @@ location::before {
   gap: 40px;
   max-width: 1400px;
   margin: 0 auto;
+  color: #ff8c00;
 }
 
 /* ============================================================
@@ -1063,19 +1068,20 @@ location::before {
   font-weight: 700;
   color: var(--text-main);
   line-height: 1.2;
+  color: #ff8c00;
 }
 
 .challenge-right {
   padding: 40px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: #ff8c0016;
+  border: 1px solid #ff8c00;
   border-radius: 25px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 
 .challenge-right:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: #ff8c000d;
   border-color: var(--accent-orange);
 }
 
@@ -1520,7 +1526,7 @@ location::before {
   background: #0a0a0a;
 }
 .nav-block:hover .nav-name {
-  color: #008fa1;
+  color: #ff8c00;
   transform: translateY(-5px);
 }
 .nav-block:hover .diamond-teal {
