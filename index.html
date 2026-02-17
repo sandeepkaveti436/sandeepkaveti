@@ -170,7 +170,11 @@
     </div>
 
     <main class="hero">
-      <h1>Design That Feels.<br /><span class="special">Experiences That Resonate</span></h1>
+      <h1>
+        Design That Feels.<br /><span class="special"
+          >Experiences That Resonate</span
+        >
+      </h1>
       <p>
         We blend creativity, emotion, and innovation to create digital worlds
         that your audience can connect with.
@@ -511,42 +515,104 @@
           <div class="divider slow-up">OR</div>
 
           <!-- IMPORTANT: Replace 'YOUR_FORMSPREE_ID' with the ID you get from formspree.io -->
-<form id="contact-form" action="https://formspree.io/f/mdalzaya" method="POST" class="contact-form">
-    <p class="form-label slow-up">Leave us a brief message</p>
-    <div class="input-row">
-        <div class="slow-up" style="width: 100%">
-            <input type="text" name="visitor_name" placeholder="Your name" required />
-        </div>
-        <div class="slow-up" style="width: 100%">
-            <input type="contact" name="visitor_contact" placeholder="Contact" required />
-        </div>
-        
-    </div>
-    <div class="slow-up">
-        <textarea name="visitor_message" placeholder="Briefly describe your project idea..." required></textarea>
-    </div>
+          <form
+            id="contact-form"
+            action="https://formspree.io/f/mdalzaya"
+            method="POST"
+            class="contact-form"
+          >
+            <p class="form-label slow-up">Leave us a brief message</p>
+            <div class="input-row">
+              <div class="slow-up" style="width: 100%">
+                <input
+                  type="text"
+                  name="visitor_name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div class="slow-up" style="width: 100%">
+                <input
+                  type="contact"
+                  name="visitor_contact"
+                  placeholder="Contact"
+                  required
+                />
+              </div>
+            </div>
+            <div class="slow-up">
+              <textarea
+                name="visitor_message"
+                placeholder="Briefly describe your project idea..."
+                required
+              ></textarea>
+            </div>
 
-    <p class="form-label slow-up">I'm looking for...</p>
-    
-    <!-- This captures the Chip selection -->
-    <input type="hidden" id="interest-input" name="project_category" value="Web App" />
+            <p class="form-label slow-up">I'm looking for...</p>
 
-    <div class="chip-group">
-        <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'Website')">Website</button>
-        <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'Mobile App')">Mobile App</button>
-        <button type="button" class="toggle-btn slow-up active" onclick="setInterest(this, 'Web App')">Web App</button>
-        <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'E-Commerce')">E-Commerce</button>
-        <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'Brand Identity')">Brand Identity</button>
-        <button type="button" class="toggle-btn slow-up" onclick="setInterest(this, 'Other')">Other</button>
-    </div>
+            <!-- This captures the Chip selection -->
+            <input
+              type="hidden"
+              id="interest-input"
+              name="project_category"
+              value="Web App"
+            />
 
-    <button type="submit" id="submit-btn" class="send-btn slow-up">
-        Send a message
-    </button>
-    
-    <!-- This is where the Success/Error message will show -->
-    <p id="form-status" style="margin-top: 20px; text-align: center; font-weight: 500;"></p>
-</form>
+            <div class="chip-group">
+              <button
+                type="button"
+                class="toggle-btn slow-up"
+                onclick="setInterest(this, 'Website')"
+              >
+                Website
+              </button>
+              <button
+                type="button"
+                class="toggle-btn slow-up"
+                onclick="setInterest(this, 'Mobile App')"
+              >
+                Mobile App
+              </button>
+              <button
+                type="button"
+                class="toggle-btn slow-up active"
+                onclick="setInterest(this, 'Web App')"
+              >
+                Web App
+              </button>
+              <button
+                type="button"
+                class="toggle-btn slow-up"
+                onclick="setInterest(this, 'E-Commerce')"
+              >
+                E-Commerce
+              </button>
+              <button
+                type="button"
+                class="toggle-btn slow-up"
+                onclick="setInterest(this, 'Brand Identity')"
+              >
+                Brand Identity
+              </button>
+              <button
+                type="button"
+                class="toggle-btn slow-up"
+                onclick="setInterest(this, 'Other')"
+              >
+                Other
+              </button>
+            </div>
+
+            <button type="submit" id="submit-btn" class="send-btn slow-up">
+              Send a message
+            </button>
+
+            <!-- This is where the Success/Error message will show -->
+            <p
+              id="form-status"
+              style="margin-top: 20px; text-align: center; font-weight: 500"
+            ></p>
+          </form>
         </div>
       </div>
     </section>
@@ -583,8 +649,7 @@
     </footer>
 
     <!-- Scripts -->
-
-   <script>
+    <script>
       // 1. ONE-TIME PRELOADER LOGIC
       window.addEventListener("DOMContentLoaded", () => {
         const preloader = document.getElementById("preloader");
@@ -611,7 +676,7 @@
                     preloader.classList.add("fade-out");
                     wrapper.classList.add("visible");
                     sessionStorage.setItem("preloaderSeen", "true");
-                    setTimeout(() => preloader.style.display = "none", 1500);
+                    setTimeout(() => (preloader.style.display = "none"), 1500);
                   }, 500);
                 }, 2000);
               }, 500);
@@ -622,24 +687,31 @@
 
       // 2. NAV COLOR LOGIC
       const nav = document.querySelector("nav");
-      const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) nav.classList.add("nav-dark-mode");
-          else nav.classList.remove("nav-dark-mode");
-        });
-      }, { rootMargin: "-40px 0% -90% 0%", threshold: 0 });
-      document.querySelectorAll("[data-nav-light]").forEach(el => navObserver.observe(el));
+      const navObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) nav.classList.add("nav-dark-mode");
+            else nav.classList.remove("nav-dark-mode");
+          });
+        },
+        { rootMargin: "-40px 0% -90% 0%", threshold: 0 },
+      );
+      document
+        .querySelectorAll("[data-nav-light]")
+        .forEach((el) => navObserver.observe(el));
 
       // 3. FORM SUBMISSION LOGIC
       const contactForm = document.getElementById("contact-form");
-      if(contactForm) {
+      if (contactForm) {
         contactForm.addEventListener("submit", async (e) => {
           e.preventDefault();
           const status = document.getElementById("form-status");
           const btn = document.getElementById("submit-btn");
           btn.innerText = "Sending...";
           const response = await fetch(contactForm.action, {
-            method: 'POST', body: new FormData(contactForm), headers: { 'Accept': 'application/json' }
+            method: "POST",
+            body: new FormData(contactForm),
+            headers: { Accept: "application/json" },
           });
           if (response.ok) {
             status.innerText = "Message Received! ✨";
@@ -655,26 +727,36 @@
 
       // 4. YOUR ORIGINAL INTERACTION LOGIC
       function setInterest(btn, val) {
-        btn.parentElement.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('interest-input').value = val;
+        btn.parentElement
+          .querySelectorAll(".toggle-btn")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("interest-input").value = val;
       }
       function toggleContactOptions(e) {
         e.preventDefault();
         document.getElementById("contactOptions").classList.toggle("show");
       }
       const menuPage = document.getElementById("menuPage");
-      document.getElementById("openMenu").onclick = () => menuPage.classList.add("active");
-      document.getElementById("closeMenu").onclick = () => menuPage.classList.remove("active");
+      document.getElementById("openMenu").onclick = () =>
+        menuPage.classList.add("active");
+      document.getElementById("closeMenu").onclick = () =>
+        menuPage.classList.remove("active");
 
       // 5. YOUR ORIGINAL REVEAL ANIMATIONS
       document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add("active", "is-visible");
-          });
-        }, { threshold: 0.1 });
-        document.querySelectorAll(".stat-box, .slow-up, .main-heading").forEach(el => observer.observe(el));
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting)
+                entry.target.classList.add("active", "is-visible");
+            });
+          },
+          { threshold: 0.1 },
+        );
+        document
+          .querySelectorAll(".stat-box, .slow-up, .main-heading")
+          .forEach((el) => observer.observe(el));
       });
     </script>
   </body>
