@@ -814,6 +814,7 @@ nav {
     max-width: 1400px;
     margin: 0 auto 80px;
     padding: 0 5%;
+    
    
     
 }
@@ -823,6 +824,7 @@ nav {
     font-size: clamp(2rem, 8vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 30px;
+    
 }
 .header p {
     font-size: 1.1rem;
@@ -838,6 +840,7 @@ nav {
     display: flex;
     gap: 60px;
     flex-wrap: wrap;
+    
 }
 
 .project-meta div {
@@ -846,7 +849,7 @@ nav {
 }
 
 .project-meta div strong {
-    color: var(--accent-orange);
+   color: #009ca8;;
     font-weight: 600;
     margin-right: 8px;
 }
@@ -859,6 +862,7 @@ nav {
     gap: 60px;
     margin-bottom: 80px;
     flex-wrap: wrap;
+    
 }
 
 date,
@@ -888,6 +892,7 @@ location::before {
     padding: 100px 5%;
     background: linear-gradient(135deg, rgba(255, 77, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
     margin: 80px 0;
+    color: #009ca8;
 }
 
 .process-main-title {
@@ -941,6 +946,7 @@ location::before {
 
 .process-card:hover::before {
     opacity: 1;
+    color: #009ca8;
 }
 
 .process-card:hover {
@@ -975,7 +981,7 @@ location::before {
 }
 
 .process-card:hover .icon-wrap {
-    background: rgba(255, 77, 0, 0.2);
+    background: #009da81a;
     border-color: var(--accent-orange);
 }
 
@@ -1033,6 +1039,7 @@ location::before {
     padding: 100px 5%;
     background: linear-gradient(135deg, rgba(255, 77, 0, 0.08) 0%, rgba(0, 0, 0, 0) 100%);
     margin: 80px 0;
+    color: #009ca8;
 }
 
 .challenge-container {
@@ -1066,7 +1073,7 @@ location::before {
 }
 
 .challenge-right:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: #009da80c;
     border-color: var(--accent-orange);
 }
 
@@ -1082,7 +1089,7 @@ location::before {
     align-items: center;
     gap: 10px;
     background: var(--glass-bg);
-    color: #F6BF7F;
+    color: #009ca8;
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
@@ -1352,12 +1359,13 @@ location::before {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+    
 }
 
 .gallery-title {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 500;
-    color: #ffffff;
+    color: #009ca8;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -1416,7 +1424,7 @@ location::before {
     object-fit: cover;
     display: block;
     overflow: hidden;
-    border: 1px solid #F6BF7F;
+    border: 1px solid #009ca8;
 }
 .next-project-section {
     position: relative;
