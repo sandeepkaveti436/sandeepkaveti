@@ -24,9 +24,9 @@
 
   <body>
     <!-- Preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader"> -->
       <!-- Center Content -->
-      <div class="preloader-center">
+      <!-- <div class="preloader-center">
         <div id="loader-percent">00</div>
 
         <div id="loader-logo-container">
@@ -42,13 +42,13 @@
             />
           </svg>
         </div>
-      </div>
+      </div> -->
 
       <!-- Bottom Progress Bar -->
-      <div class="loader-progress-wrapper">
+      <!-- <div class="loader-progress-wrapper">
         <div id="loader-progress-bar"></div>
       </div>
-    </div>
+    </div> -->
 
     <!-- main scection -->
     <div class="background-container">
@@ -179,22 +179,121 @@
         We blend creativity, emotion, and innovation to create digital worlds
         that your audience can connect with.
       </p>
-      <a href="#contact" class="cta-button">
-        Lets talk
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
-      </a>
+      <div class="hero-buttons">
+  
+  <!-- Lets Talk Button -->
+  <a href="javascript:void(0)" class="cta-button" onclick="openModal()">
+    <span>Lets Talk</span>
+
+    <svg class="arrow-icon"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <line x1="7" y1="17" x2="17" y2="7"></line>
+      <polyline points="7 7 17 7 17 17"></polyline>
+    </svg>
+  </a>
+
+  <!-- Download Button -->
+  <a href="./assets/Resume/Resume.pdf" class="download-btn" download>
+    <span>Download CV</span>
+
+    <svg class="download-icon"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M12 3v12"></path>
+      <polyline points="7 11 12 16 17 11"></polyline>
+      <path d="M5 21h14"></path>
+    </svg>
+  </a>
+
+</div>
+
+
+
+<!-- ================= CONTACT MODAL ================= -->
+<div class="contact-modal" id="contactModal">
+  <div class="modal-overlay" onclick="closeModal()"></div>
+
+  <div class="modal-content">
+    
+    <!-- Background Image -->
+    <div class="modal-bg"></div>
+
+    <!-- Glass Box -->
+    <div class="modal-box">
+
+      <button class="modal-close" onclick="closeModal()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h2>Let’s Work Together 🚀</h2>
+
+      <!-- Your Details -->
+      <div class="my-details">
+        <p><strong>Name:</strong> Sandeep Kaveti</p>
+        <p><strong>Phone:</strong> +91 9392525043</p>
+        <p><strong>Email:</strong> sandeepkaveti436@gmail.com</p>
+      </div>
+
+      <!-- Contact Form -->
+    <form
+  class="modal-form"
+  action="https://formspree.io/f/mdalzaya"
+  method="POST"
+  id="modal-contact-form"
+>
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+  />
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    required
+  />
+
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Your Phone"
+    required
+  />
+
+  <textarea
+    name="message"
+    placeholder="Tell me about your project..."
+    required
+  ></textarea>
+
+  <button type="submit">Send Message</button>
+
+  <p id="modal-form-status" style="margin-top:10px;"></p>
+</form>
+
+
+    </div>
+  </div>
+</div>
+
+      
       <div class="footer-tags">
         <span>UI/UX DESIGN</span>
         <b class="footer-sep">|</b>
@@ -650,6 +749,15 @@
 
     <!-- Scripts -->
     <script>
+      function openModal() {
+    document.getElementById("contactModal").classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    document.getElementById("contactModal").classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
       // 1. ONE-TIME PRELOADER LOGIC
       window.addEventListener("DOMContentLoaded", () => {
         const preloader = document.getElementById("preloader");
