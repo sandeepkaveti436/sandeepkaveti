@@ -1408,6 +1408,25 @@ nav,
   .footer-section {
     padding: 60px 20px 30px 20px;
   }
+  /* COMMON BUTTON STYLE */
+.cta-button,
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 15px 32px;
+  border-radius: 50px;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  animation: float 3s ease-in-out infinite;
+  color: #fff;
+  background-color: #009ca8;
+  border: none;
+}
 
   .footer-tagline {
     font-size: 1.1rem;
@@ -2184,15 +2203,27 @@ body {
 }
 
 /* --- SEPARATE SLOW-UP ANIMATION WITH BLUR --- */
-.slow-up {
+
+.center-img-container,
+.bottom-img-container {
+  overflow: hidden;
+}
+
+.center-img-container img,
+.bottom-img-container img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  transform: scale(2.1);
   opacity: 0;
-  filter: blur(15px); /* Cinematic blur start */
-  transform: translateY(80px); /* Slightly lower start for more travel */
-  transition:
-    opacity 1.5s ease-out,
-    transform 1.5s ease-out,
-    filter 1.5s ease-out;
-  will-change: transform, opacity, filter;
+  transition: transform 2.8s ease, opacity 2.8s ease;
+}
+
+/* When visible */
+.slow-up.active img {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .slow-up.is-visible {
@@ -2210,6 +2241,18 @@ body {
     flex-direction: column;
     gap: 10px;
   }
+  .center-img-container img,
+.bottom-img-container img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  transform: scale(2.1);
+  opacity: 0;
+  transition: transform 2.8s ease, opacity 2.8s ease;
+}
+  
+  
 }
 
 @media (max-width: 480px) {

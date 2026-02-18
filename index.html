@@ -23,32 +23,7 @@
   </head>
 
   <body>
-    <!-- Preloader -->
-    <!-- <div id="preloader"> -->
-      <!-- Center Content -->
-      <!-- <div class="preloader-center">
-        <div id="loader-percent">00</div>
-
-        <div id="loader-logo-container">
-          <svg
-            id="loader-star"
-            width="120"
-            height="120"
-            viewBox="0 0 24 24"
-            fill="white"
-          >
-            <path
-              d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
-            />
-          </svg>
-        </div>
-      </div> -->
-
-      <!-- Bottom Progress Bar -->
-      <!-- <div class="loader-progress-wrapper">
-        <div id="loader-progress-bar"></div>
-      </div>
-    </div> -->
+   
 
     <!-- main scection -->
     <div class="background-container">
@@ -180,120 +155,108 @@
         that your audience can connect with.
       </p>
       <div class="hero-buttons">
-  
-  <!-- Lets Talk Button -->
-  <a href="javascript:void(0)" class="cta-button" onclick="openModal()">
-    <span>Lets Talk</span>
+        <!-- Lets Talk Button -->
+        <a href="javascript:void(0)" class="cta-button" onclick="openModal()">
+          <span>Lets Talk</span>
 
-    <svg class="arrow-icon"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <line x1="7" y1="17" x2="17" y2="7"></line>
-      <polyline points="7 7 17 7 17 17"></polyline>
-    </svg>
-  </a>
+          <svg
+            class="arrow-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
 
-  <!-- Download Button -->
-  <a href="./assets/Resume/Resume.pdf" class="download-btn" download>
-    <span>Download CV</span>
+        <!-- Download Button -->
+        <a href="./assets/Resume/Resume.pdf" class="download-btn" download>
+          <span>Download CV</span>
 
-    <svg class="download-icon"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path d="M12 3v12"></path>
-      <polyline points="7 11 12 16 17 11"></polyline>
-      <path d="M5 21h14"></path>
-    </svg>
-  </a>
-
-</div>
-
-
-
-<!-- ================= CONTACT MODAL ================= -->
-<div class="contact-modal" id="contactModal">
-  <div class="modal-overlay" onclick="closeModal()"></div>
-
-  <div class="modal-content">
-    
-    <!-- Background Image -->
-    <div class="modal-bg"></div>
-
-    <!-- Glass Box -->
-    <div class="modal-box">
-
-      <button class="modal-close" onclick="closeModal()">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <h2>Let’s Work Together 🚀</h2>
-
-      <!-- Your Details -->
-      <div class="my-details">
-        <p><strong>Name:</strong> Sandeep Kaveti</p>
-        <p><strong>Phone:</strong> +91 9392525043</p>
-        <p><strong>Email:</strong> sandeepkaveti436@gmail.com</p>
+          <svg
+            class="download-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 3v12"></path>
+            <polyline points="7 11 12 16 17 11"></polyline>
+            <path d="M5 21h14"></path>
+          </svg>
+        </a>
       </div>
 
-      <!-- Contact Form -->
-    <form
-  class="modal-form"
-  action="https://formspree.io/f/mdalzaya"
-  method="POST"
-  id="modal-contact-form"
->
-  <input
-    type="text"
-    name="name"
-    placeholder="Your Name"
-    required
-  />
+      <!-- ================= CONTACT MODAL ================= -->
+      <div class="contact-modal" id="contactModal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
 
-  <input
-    type="email"
-    name="email"
-    placeholder="Your Email"
-    required
-  />
+        <div class="modal-content">
+          <!-- Background Image -->
+          <div class="modal-bg"></div>
 
-  <input
-    type="tel"
-    name="phone"
-    placeholder="Your Phone"
-    required
-  />
+          <!-- Glass Box -->
+          <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
 
-  <textarea
-    name="message"
-    placeholder="Tell me about your project..."
-    required
-  ></textarea>
+            <h2>Let’s Work Together 🚀</h2>
 
-  <button type="submit">Send Message</button>
+            <!-- Your Details -->
+            <div class="my-details">
+              <p><strong>Name:</strong> Sandeep Kaveti</p>
+              <p><strong>Phone:</strong> +91 9392525043</p>
+              <p><strong>Email:</strong> sandeepkaveti436@gmail.com</p>
+            </div>
 
-  <p id="modal-form-status" style="margin-top:10px;"></p>
-</form>
+            <!-- Contact Form -->
+            <form
+              class="modal-form"
+              action="https://formspree.io/f/mdalzaya"
+              method="POST"
+              id="modal-contact-form"
+            >
+              <input type="text" name="name" placeholder="Your Name" required />
 
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
 
-    </div>
-  </div>
-</div>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Your Phone"
+                required
+              />
 
-      
+              <textarea
+                name="message"
+                placeholder="Tell me about your project..."
+                required
+              ></textarea>
+
+              <button type="submit">Send Message</button>
+
+              <p id="modal-form-status" style="margin-top: 10px"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+
       <div class="footer-tags">
         <span>UI/UX DESIGN</span>
         <b class="footer-sep">|</b>
@@ -320,8 +283,15 @@
             <div class="stat-row">
               <span class="stat-number">30+ Projects</span>
               <div class="glass-icon-circle">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                  <path
+                    d="M8 6L3 12l5 6M16 6l5 6-5 6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
             </div>
@@ -333,10 +303,14 @@
             <div class="stat-row">
               <span class="stat-number">4 Years of EXP</span>
               <div class="glass-icon-circle">
-                <svg viewBox="0 0 24 24">
-                  <rect x="8" y="2" width="8" height="4" rx="1" />
+                <svg viewBox="0 0 24 24" width="20" height="20">
                   <path
-                    d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+                    d="M3 7h18v13H3zM8 7V4h8v3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   />
                 </svg>
               </div>
@@ -361,14 +335,16 @@
           </div>
         </div>
 
-        <div class="center-img-container">
-          <img
-            src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=800"
-            alt="Illustration"
-          />
-        </div>
+        <div class="center-img-container slow-up">
+  <img src="./assets/Profile IMG/sandy.jpg" />
+</div>
 
-        <div class="right-column">
+<div class="bottom-img-container slow-up">
+  <img src="./assets/image1.jpg" />
+</div>
+
+
+        <!-- <div class="right-column">
           <p class="right-text">
             I turn visions into reality with design crafted to inspire and leave
             lasting impressions.
@@ -376,7 +352,7 @@
           <div class="bottom-img-container">
             <img src="./assets/Profile IMG/sandy.jpg" alt="Professional" />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -735,9 +711,10 @@
           </div>
         </div>
         <hr class="footer-line" />
-        <div class="footer-brand-name">
-          <h1>SANDEEP KAVETI</h1>
-        </div>
+       <div class="footer-brand-name slow-up">
+  <h1>SANDEEP KAVETI</h1>
+</div>
+
         <div class="footer-bottom-row">
           <p>©2026 SANDEEPKAVETI. All rights reserved</p>
           <div class="footer-scroll">
@@ -749,49 +726,47 @@
 
     <!-- Scripts -->
     <script>
+      const brand = document.querySelector(".footer-brand-name h1");
+const text = brand.textContent;
+brand.textContent = "";
+
+[...text].forEach((char, i) => {
+  const span = document.createElement("span");
+  span.textContent = char;
+  span.style.setProperty("--index", i);
+  brand.appendChild(span);
+});
+
+      document.addEventListener("DOMContentLoaded", () => {
+
+  const isMobile = window.innerWidth <= 768;
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target); // Stops observing after reveal (important for performance)
+      }
+    });
+  }, {
+    threshold: isMobile ? 0.05 : 0.15,
+    rootMargin: isMobile ? "0px 0px -50px 0px" : "0px"
+  });
+
+  document.querySelectorAll(".slow-up, .stat-box, .main-heading")
+    .forEach(el => observer.observe(el));
+
+});
+
       function openModal() {
-    document.getElementById("contactModal").classList.add("active");
-    document.body.style.overflow = "hidden";
-  }
+        document.getElementById("contactModal").classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
 
-  function closeModal() {
-    document.getElementById("contactModal").classList.remove("active");
-    document.body.style.overflow = "auto";
-  }
-      // 1. ONE-TIME PRELOADER LOGIC
-      window.addEventListener("DOMContentLoaded", () => {
-        const preloader = document.getElementById("preloader");
-        const wrapper = document.getElementById("main-wrapper");
-        const percentElement = document.getElementById("loader-percent");
-        const progressBar = document.getElementById("loader-progress-bar");
-
-        if (sessionStorage.getItem("preloaderSeen")) {
-          preloader.style.display = "none";
-          wrapper.classList.add("visible");
-        } else {
-          let count = 0;
-          const interval = setInterval(() => {
-            count++;
-            percentElement.innerText = count < 10 ? "0" + count : count;
-            progressBar.style.width = count + "%";
-            if (count === 100) {
-              clearInterval(interval);
-              setTimeout(() => {
-                preloader.classList.add("reveal-logo");
-                setTimeout(() => {
-                  preloader.classList.add("zoom-portal");
-                  setTimeout(() => {
-                    preloader.classList.add("fade-out");
-                    wrapper.classList.add("visible");
-                    sessionStorage.setItem("preloaderSeen", "true");
-                    setTimeout(() => (preloader.style.display = "none"), 1500);
-                  }, 500);
-                }, 2000);
-              }, 500);
-            }
-          }, 40);
-        }
-      });
+      function closeModal() {
+        document.getElementById("contactModal").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
 
       // 2. NAV COLOR LOGIC
       const nav = document.querySelector("nav");
