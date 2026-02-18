@@ -23,8 +23,6 @@
   </head>
 
   <body>
-   
-
     <!-- main scection -->
     <div class="background-container">
       <div class="globe-glow"></div>
@@ -336,13 +334,12 @@
         </div>
 
         <div class="center-img-container slow-up">
-  <img src="./assets/Profile IMG/sandy.jpg" />
-</div>
+          <img src="./assets/Profile IMG/sandy.jpg" />
+        </div>
 
-<div class="bottom-img-container slow-up">
-  <img src="./assets/image1.jpg" />
-</div>
-
+        <div class="bottom-img-container slow-up">
+          <img src="./assets/image1.jpg" />
+        </div>
 
         <!-- <div class="right-column">
           <p class="right-text">
@@ -711,9 +708,9 @@
           </div>
         </div>
         <hr class="footer-line" />
-       <div class="footer-brand-name slow-up">
-  <h1>SANDEEP KAVETI</h1>
-</div>
+        <div class="footer-brand-name slow-up">
+          <h1>SANDEEP KAVETI</h1>
+        </div>
 
         <div class="footer-bottom-row">
           <p>©2026 SANDEEPKAVETI. All rights reserved</p>
@@ -727,36 +724,38 @@
     <!-- Scripts -->
     <script>
       const brand = document.querySelector(".footer-brand-name h1");
-const text = brand.textContent;
-brand.textContent = "";
+      const text = brand.textContent;
+      brand.textContent = "";
 
-[...text].forEach((char, i) => {
-  const span = document.createElement("span");
-  span.textContent = char;
-  span.style.setProperty("--index", i);
-  brand.appendChild(span);
-});
+      [...text].forEach((char, i) => {
+        const span = document.createElement("span");
+        span.textContent = char;
+        span.style.setProperty("--index", i);
+        brand.appendChild(span);
+      });
 
       document.addEventListener("DOMContentLoaded", () => {
+        const isMobile = window.innerWidth <= 768;
 
-  const isMobile = window.innerWidth <= 768;
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target); // Stops observing after reveal (important for performance)
+              }
+            });
+          },
+          {
+            threshold: isMobile ? 0.05 : 0.15,
+            rootMargin: isMobile ? "0px 0px -50px 0px" : "0px",
+          },
+        );
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        observer.unobserve(entry.target); // Stops observing after reveal (important for performance)
-      }
-    });
-  }, {
-    threshold: isMobile ? 0.05 : 0.15,
-    rootMargin: isMobile ? "0px 0px -50px 0px" : "0px"
-  });
-
-  document.querySelectorAll(".slow-up, .stat-box, .main-heading")
-    .forEach(el => observer.observe(el));
-
-});
+        document
+          .querySelectorAll(".slow-up, .stat-box, .main-heading")
+          .forEach((el) => observer.observe(el));
+      });
 
       function openModal() {
         document.getElementById("contactModal").classList.add("active");
